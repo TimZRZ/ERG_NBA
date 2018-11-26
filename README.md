@@ -1,2 +1,2 @@
 # ERG_GO
-![image] (https://www.cse.yzu.edu.tw/api/images/professor/Tzong-Yi%20Lee.jpg)
+![image](https://github.com/TimZRZ/ERG_NBA/raw/master/NBA_Analysis/images/Tzong-Yi%20Lee.jpg)
