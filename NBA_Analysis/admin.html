@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>NBA Analysis</title>
+    <!-- Bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+    <!-- Bulma Version 0.7.2-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/admin.css">
+</head>
+
+<body>
+
+    <!-- START NAV -->
+    <nav class="navbar is-white">
+        <div class="container">
+            <div class="navbar-brand">
+                <a class="navbar-item brand-text" href="admin.html">
+          NBA Analysis
+        </a>
+                <div class="navbar-burger burger" data-target="navMenu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <div id="navMenu" class="navbar-menu">
+                <div class="navbar-start">
+                    <a class="navbar-item" href="admin.html">
+            Home
+          </a>
+                    <a class="navbar-item" href="admin.html">
+            About Us
+          </a>
+                <div class="search bar6 navbar-item">
+                    <form>
+                        <input type="text" placeholder="请输入球星或球队名" name="cname">
+                        <button type="submit"></button>
+                    </form>
+                </div>
+                </div>
+
+            </div>
+        </div>
+    </nav>
+    <!-- END NAV -->
+    <div class="container">
+        <div class="columns">
+            <div class="column is-3">
+                <aside class="menu">
+                    <p class="menu-label">
+                        球员筛选
+                    </p>
+                    <ul class="menu-list">
+                        <li><a class="is-active">筛选项1</a></li>
+                        <li><a>筛选项2</a></li>
+                    </ul>
+                    <p class="menu-label">
+                        球队筛选
+                    </p>
+                    <ul class="menu-list">
+                        <li><a>筛选项1</a></li>
+                        <li>
+                            <a>筛选项2</a>
+                            <ul>
+                                <li><a>条件1</a></li>
+                                <li><a>条件2</a></li>
+                                <li><a>条件3</a></li>
+                            </ul>
+                        </li>
+                </aside>
+            </div>
+            <div class="column is-9">
+                <nav class="breadcrumb" aria-label="breadcrumbs">
+                    <ul>
+                        <li class="is-active"><a href="admin.html">Team</a></li>
+                        <li><a href="topPlayer.html">Player</a></li>
+                    </ul>
+                </nav>
+                <!--Atlantic-->
+                <section class="landing">
+                    <div class="category-header">
+                        <h2 class="category_header_name">Atlantic</h2>
+                        <div class="clear">
+                            <hr style="width: 150px;height:1px;border:none;border-top:1px solid rgb(0, 0, 0);" />
+                        </div>
+                    </div>
+                    <div class="category-body">
+                        <table>
+                            <tr>
+                                <td class="category_text">
+                                    <a class=stats_team_link href = "./admin.html">
+                                        <img class="team_logo" abbr="BOS" src="https://stats.nba.com/media/img/teams/logos/BOS_logo.svg">
+                                        Boston Celtics
+                                    </a> 
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="category_text">
+                                    <a class=stats_team_link href = "./admin.html">
+                                        <img class="team_logo" abbr="BKN" src="https://stats.nba.com/media/img/teams/logos/BKN_logo.svg">
+                                        Brooklyn Nets
+                                    </a> 
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="category_text">
+                                    <a class=stats_team_link href = "./admin.html">
+                                        <img class="team_logo" abbr="NYK" src="https://stats.nba.com/media/img/teams/logos/NYK_logo.svg">
+                                        New York Knicks
+                                    </a> 
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="category_text">
+                                    <a class=stats_team_link href = "./admin.html">
+                                        <img class="team_logo" abbr="PHI" src="https://stats.nba.com/media/img/teams/logos/PHI_logo.svg">
+                                        Philadelphia 76ers
+                                    </a> 
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="category_text">
+                                    <a class=stats_team_link href = "./admin.html">
+                                        <img class="team_logo" abbr="TOR" src="https://stats.nba.com/media/img/teams/logos/TOR_logo.svg">
+                                        Toronto Raptors
+                                    </a> 
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+
+                </section>
+                <!--Central-->
+                <section class="landing">
+                    <div class="category-header">
+                        <h2 class="category_header_name">Central</h2>
+                        <div class="clear">
+                            <hr style="width: 150px;height:1px;border:none;border-top:1px solid rgb(0, 0, 0);" />
+                        </div>
+                    </div>
+                    <div class="category-body">
+                        <table>
+                            <tr>
+                                <td class="category_text">
+                                    <a class=stats_team_link href = "./admin.html">
+                                        <img class="team_logo" abbr="CHI" src="https://stats.nba.com/media/img/teams/logos/CHI_logo.svg">
+                                        Chicago Bulls
+                                    </a> 
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="category_text">
+                                    <a class=stats_team_link href = "./admin.html">
+                                        <img class="team_logo" abbr="BKN" src="https://stats.nba.com/media/img/teams/logos/CLE_logo.svg">
+                                        Cleveland Cavaliers
+                                    </a> 
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="category_text">
+                                    <a class=stats_team_link href = "./admin.html">
+                                        <img class="team_logo" abbr="DET" src="https://stats.nba.com/media/img/teams/logos/DET_logo.svg">
+                                        Detroit Pistons
+                                    </a> 
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="category_text">
+                                    <a class=stats_team_link href = "./admin.html">
+                                        <img class="team_logo" abbr="IND" src="https://stats.nba.com/media/img/teams/logos/IND_logo.svg">
+                                        Indiana Pacers
+                                    </a> 
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="category_text">
+                                    <a class=stats_team_link href = "./admin.html">
+                                        <img class="team_logo" abbr="MIL" src="https://stats.nba.com/media/img/teams/logos/MIL_logo.svg">
+                                        Milwaukee Bucks
+                                    </a> 
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+
+                </section>
+                    
+                <!--Southeast-->
+                <section class="landing">
+                    <div class="category-header">
+                        <h2 class="category_header_name">Southeast</h2>
+                        <div class="clear">
+                            <hr style="width: 150px;height:1px;border:none;border-top:1px solid rgb(0, 0, 0);" />
+                        </div>
+                    </div>
+                    <div class="category-body">
+                        <table>
+                            <tr>
+                                <td class="category_text">
+                                    <a class=stats_team_link href = "./admin.html">
+                                        <img class="team_logo" abbr="ATL" src="https://stats.nba.com/media/img/teams/logos/ATL_logo.svg">
+                                        Atlanta Hawks
+                                    </a> 
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="category_text">
+                                    <a class=stats_team_link href = "./admin.html">
+                                        <img class="team_logo" abbr="CHA" src="https://stats.nba.com/media/img/teams/logos/CHA_logo.svg">
+                                        Charlotte Hornets
+                                    </a> 
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="category_text">
+                                    <a class=stats_team_link href = "./admin.html">
+                                        <img class="team_logo" abbr="MIA" src="https://stats.nba.com/media/img/teams/logos/MIA_logo.svg">
+                                        Miami Heat
+                                    </a> 
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="category_text">
+                                    <a class=stats_team_link href = "./admin.html">
+                                        <img class="team_logo" abbr="ORL" src="https://stats.nba.com/media/img/teams/logos/ORL_logo.svg">
+                                        Orlando Magic
+                                    </a> 
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="category_text">
+                                    <a class=stats_team_link href = "./admin.html">
+                                        <img class="team_logo" abbr="WAS" src="https://stats.nba.com/media/img/teams/logos/WAS_logo.svg">
+                                        Washington Wizards
+                                    </a> 
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+
+                </section>
+                    
+                <!--Northwest-->
+                <section class="landing">
+                    <div class="category-header">
+                        <h2 class="category_header_name">Northwest</h2>
+                        <div class="clear">
+                            <hr style="width: 150px;height:1px;border:none;border-top:1px solid rgb(0, 0, 0);" />
+                        </div>
+                    </div>
+                    <div class="category-body">
+                        <table>
+                            <tr>
+                                <td class="category_text">
+                                    <a class=stats_team_link href = "./admin.html">
+                                        <img class="team_logo" abbr="DEN" src="https://stats.nba.com/media/img/teams/logos/DEN_logo.svg">
+                                        Denver Nuggets
+                                    </a> 
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="category_text">
+                                    <a class=stats_team_link href = "./admin.html">
+                                        <img class="team_logo" abbr="MIN" src="https://stats.nba.com/media/img/teams/logos/MIN_logo.svg">
+                                        Minnesota Timberwolves
+                                    </a> 
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="category_text">
+                                    <a class=stats_team_link href = "./admin.html">
+                                        <img class="team_logo" abbr="OKC" src="https://stats.nba.com/media/img/teams/logos/OKC_logo.svg">
+                                        Oklahoma City Thunder
+                                    </a> 
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="category_text">
+                                    <a class=stats_team_link href = "./admin.html">
+                                        <img class="team_logo" abbr="POR" src="https://stats.nba.com/media/img/teams/logos/POR_logo.svg">
+                                        Portland Trail Blazers
+                                    </a> 
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="category_text">
+                                    <a class=stats_team_link href = "./admin.html">
+                                        <img class="team_logo" abbr="UTA" src="https://stats.nba.com/media/img/teams/logos/UTA_logo.svg">
+                                        Utah Jazz
+                                    </a> 
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+
+                </section>
+                <!--Pacific-->
+                <section class="landing">
+                    <div class="category-header">
+                        <h2 class="category_header_name">Pacific</h2>
+                        <div class="clear">
+                            <hr style="width: 150px;height:1px;border:none;border-top:1px solid rgb(0, 0, 0);" />
+                        </div>
+                    </div>
+                    <div class="category-body">
+                        <table>
+                            <tr>
+                                <td class="category_text">
+                                    <a class=stats_team_link href = "./admin.html">
+                                        <img class="team_logo" abbr="GSW" src="https://stats.nba.com/media/img/teams/logos/GSW_logo.svg">
+                                        Golden State Warriors
+                                    </a> 
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="category_text">
+                                    <a class=stats_team_link href = "./admin.html">
+                                        <img class="team_logo" abbr="LAC" src="https://stats.nba.com/media/img/teams/logos/LAC_logo.svg">
+                                        LA Clippers
+                                    </a> 
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="category_text">
+                                    <a class=stats_team_link href = "./admin.html">
+                                        <img class="team_logo" abbr="LAL" src="https://stats.nba.com/media/img/teams/logos/LAL_logo.svg">
+                                        Los Angeles Lakers
+                                    </a> 
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="category_text">
+                                    <a class=stats_team_link href = "./admin.html">
+                                        <img class="team_logo" abbr="PHX" src="https://stats.nba.com/media/img/teams/logos/PHX_logo.svg">
+                                        Phoenix Suns
+                                    </a> 
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="category_text">
+                                    <a class=stats_team_link href = "./admin.html">
+                                        <img class="team_logo" abbr="SAC" src="https://stats.nba.com/media/img/teams/logos/SAC_logo.svg">
+                                        Sacramento Kings
+                                    </a> 
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+
+                </section>
+                <!--Southwest-->
+                <section class="landing">
+                    <div class="category-header">
+                        <h2 class="category_header_name">Southwest</h2>
+                        <div class="clear">
+                            <hr style="width: 150px;height:1px;border:none;border-top:1px solid rgb(0, 0, 0);" />
+                        </div>
+                    </div>
+                    <div class="category-body">
+                        <table>
+                            <tr>
+                                <td class="category_text">
+                                    <a class=stats_team_link href = "./admin.html">
+                                        <img class="team_logo" abbr="DAL" src="https://stats.nba.com/media/img/teams/logos/DAL_logo.svg">
+                                        Dallas Mavericks
+                                    </a> 
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="category_text">
+                                    <a class=stats_team_link href = "./admin.html">
+                                        <img class="team_logo" abbr="HOU" src="https://stats.nba.com/media/img/teams/logos/HOU_logo.svg">
+                                        Houston Rockets
+                                    </a> 
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="category_text">
+                                    <a class=stats_team_link href = "./admin.html">
+                                        <img class="team_logo" abbr="MEM" src="https://stats.nba.com/media/img/teams/logos/MEM_logo.svg">
+                                        Memphis Grizzlies
+                                    </a> 
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="category_text">
+                                    <a class=stats_team_link href = "./admin.html">
+                                        <img class="team_logo" abbr="NOP" src="https://stats.nba.com/media/img/teams/logos/NOP_logo.svg">
+                                        New Orleans Pelicans
+                                    </a> 
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="category_text">
+                                    <a class=stats_team_link href = "./admin.html">
+                                        <img class="team_logo" abbr="SAS" src="https://stats.nba.com/media/img/teams/logos/SAS_logo.svg">
+                                        San Antonio Spurs
+                                    </a> 
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+
+                </section>
+                
+            </div>
+        </div>
+    </div>
+    <script async type="text/javascript" src="../js/bulma.js"></script>
+</body>
+
+</html>

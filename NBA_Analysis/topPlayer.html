@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>NBA Analysis</title>
+    <!-- Bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+    <!-- Bulma Version 0.7.2-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/admin.css">
+</head>
+
+<body>
+
+    <!-- START NAV -->
+    <nav class="navbar is-white">
+        <div class="container">
+            <div class="navbar-brand">
+                <a class="navbar-item brand-text" href="admin.html">
+          NBA Analysis
+        </a>
+                <div class="navbar-burger burger" data-target="navMenu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <div id="navMenu" class="navbar-menu">
+                <div class="navbar-start">
+                    <a class="navbar-item" href="admin.html">
+            Home
+          </a>
+                    <a class="navbar-item" href="admin.html">
+            About Us
+          </a>
+                    <div class="search bar6 navbar-item">
+                        <form>
+                            <input type="text" placeholder="请输入球星或球队名" name="cname">
+                            <button type="submit"></button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </nav>
+    <!-- END NAV -->
+    <div class="container">
+        <div class="columns">
+            <div class="column is-3">
+                <aside class="menu">
+                    <p class="menu-label">
+                        球员筛选
+                    </p>
+                    <ul class="menu-list">
+                        <li><a class="is-active">筛选项1</a></li>
+                        <li><a>筛选项2</a></li>
+                    </ul>
+                    <p class="menu-label">
+                        球队筛选
+                    </p>
+                    <ul class="menu-list">
+                        <li><a>筛选项1</a></li>
+                        <li>
+                            <a>筛选项2</a>
+                            <ul>
+                                <li><a>条件1</a></li>
+                                <li><a>条件2</a></li>
+                                <li><a>条件3</a></li>
+                            </ul>
+                        </li>
+                </aside>
+            </div>
+            <div class="column is-9">
+                <nav class="breadcrumb" aria-label="breadcrumbs">
+                    <ul>
+                        <li><a href="admin.html">Team</a></li>
+                        <li class="is-active"><a href="topPlayer.html">Player</a></li>
+                    </ul>
+                </nav>
+                <!--Point Per Game-->
+                <section class="landing">
+                    <div class="category-header">
+                        <h2 class="category_header_name">Point Per Game</h2>
+                        <div class="clear">
+                            <hr style="width: 150px;height:1px;border:none;border-top:1px solid rgb(0, 0, 0);" />
+                        </div>
+                    </div>
+                    <div class="category-body">
+                        <table>
+                            <tr>
+                                <td class="category_text">
+                                    <a class=stats_team_link href = "./admin.html">
+                                        <img class="team_logo" abbr="BOS" href="images/BOS_logo.jpg">
+                                        1. James Hardon
+                                    </a> 
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="category_text">
+                                    <a class=stats_team_link href = "./admin.html">
+                                        <img class="team_logo" abbr="BKN" href="images/BKN_logo.jpg">
+                                        2. James Hardon
+                                    </a> 
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="category_text">
+                                    <a class=stats_team_link href = "./admin.html">
+                                        <img class="team_logo" abbr="NYK" href="images/NYK_logo.jpg">
+                                        3. James Hardon
+                                    </a> 
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="category_text">
+                                    <a class=stats_team_link href = "./admin.html">
+                                        <img class="team_logo" abbr="PHI" href="images/PHI_logo.jpg">
+                                        4. James Hardon
+                                    </a> 
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="category_text">
+                                    <a class=stats_team_link href = "./admin.html">
+                                        <img class="team_logo" abbr="TOR" href="images/TOR_logo.jpg">
+                                        5. James Hardon
+                                    </a> 
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+
+                </section>
+                <!--Rebounds Per Game-->
+                <section class="landing">
+                    <div class="category-header">
+                        <h2 class="category_header_name">Rebounds Per Game</h2>
+                        <div class="clear">
+                            <hr style="width: 150px;height:1px;border:none;border-top:1px solid rgb(0, 0, 0);" />
+                        </div>
+                    </div>
+                    <div class="category-body">
+                        <table>
+                            <tr>
+                                <td class="category_text">
+                                    <a class=stats_team_link href = "./admin.html">
+                                        <img class="team_logo" abbr="BOS" href="images/BOS_logo.jpg">
+                                        1. Andre Drummond
+                                    </a> 
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="category_text">
+                                    <a class=stats_team_link href = "./admin.html">
+                                        <img class="team_logo" abbr="BKN" href="images/BKN_logo.jpg">
+                                        2. Andre Drummond
+                                    </a> 
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="category_text">
+                                    <a class=stats_team_link href = "./admin.html">
+                                        <img class="team_logo" abbr="NYK" href="images/NYK_logo.jpg">
+                                        3. Andre Drummond
+                                    </a> 
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="category_text">
+                                    <a class=stats_team_link href = "./admin.html">
+                                        <img class="team_logo" abbr="PHI" href="images/PHI_logo.jpg">
+                                        4. Andre Drummond
+                                    </a> 
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="category_text">
+                                    <a class=stats_team_link href = "./admin.html">
+                                        <img class="team_logo" abbr="TOR" href="images/TOR_logo.jpg">
+                                        5. Andre Drummond
+                                    </a> 
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+
+                </section>
+                    
+                <!--Assists Per Game-->
+                <section class="landing">
+                    <div class="category-header">
+                        <h2 class="category_header_name">Assists Per Game</h2>
+                        <div class="clear">
+                            <hr style="width: 150px;height:1px;border:none;border-top:1px solid rgb(0, 0, 0);" />
+                        </div>
+                    </div>
+                    <div class="category-body">
+                        <table>
+                            <tr>
+                                <td class="category_text">
+                                    <a class=stats_team_link href = "./admin.html">
+                                        <img class="team_logo" abbr="BOS" href="images/BOS_logo.jpg">
+                                        1. Kyle Lowry
+                                    </a> 
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="category_text">
+                                    <a class=stats_team_link href = "./admin.html">
+                                        <img class="team_logo" abbr="BKN" href="images/BKN_logo.jpg">
+                                        2. Kyle Lowry
+                                    </a> 
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="category_text">
+                                    <a class=stats_team_link href = "./admin.html">
+                                        <img class="team_logo" abbr="NYK" href="images/NYK_logo.jpg">
+                                        3. Kyle Lowry
+                                    </a> 
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="category_text">
+                                    <a class=stats_team_link href = "./admin.html">
+                                        <img class="team_logo" abbr="PHI" href="images/PHI_logo.jpg">
+                                        4. Kyle Lowry
+                                    </a> 
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="category_text">
+                                    <a class=stats_team_link href = "./admin.html">
+                                        <img class="team_logo" abbr="TOR" href="images/TOR_logo.jpg">
+                                        5. Kyle Lowry
+                                    </a> 
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+
+                </section>
+                    
+                <!--Blocks Per Game-->
+                <section class="landing">
+                    <div class="category-header">
+                        <h2 class="category_header_name">Blocks Per Game</h2>
+                        <div class="clear">
+                            <hr style="width: 150px;height:1px;border:none;border-top:1px solid rgb(0, 0, 0);" />
+                        </div>
+                    </div>
+                    <div class="category-body">
+                        <table>
+                            <tr>
+                                <td class="category_text">
+                                    <a class=stats_team_link href = "./admin.html">
+                                        <img class="team_logo" abbr="BOS" href="images/BOS_logo.jpg">
+                                        1. Anthony Davis
+                                    </a> 
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="category_text">
+                                    <a class=stats_team_link href = "./admin.html">
+                                        <img class="team_logo" abbr="BKN" href="images/BKN_logo.jpg">
+                                        2. Anthony Davis
+                                    </a> 
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="category_text">
+                                    <a class=stats_team_link href = "./admin.html">
+                                        <img class="team_logo" abbr="NYK" href="images/NYK_logo.jpg">
+                                        3. Anthony Davis
+                                    </a> 
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="category_text">
+                                    <a class=stats_team_link href = "./admin.html">
+                                        <img class="team_logo" abbr="PHI" href="images/PHI_logo.jpg">
+                                        4. Anthony Davis
+                                    </a> 
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="category_text">
+                                    <a class=stats_team_link href = "./admin.html">
+                                        <img class="team_logo" abbr="TOR" href="images/TOR_logo.jpg">
+                                        5. Anthony Davis
+                                    </a> 
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+
+                </section>
+                <!--Steals Per Game-->
+                <section class="landing">
+                    <div class="category-header">
+                        <h2 class="category_header_name">Steals Per Game</h2>
+                        <div class="clear">
+                            <hr style="width: 150px;height:1px;border:none;border-top:1px solid rgb(0, 0, 0);" />
+                        </div>
+                    </div>
+                    <div class="category-body">
+                        <table>
+                            <tr>
+                                <td class="category_text">
+                                    <a class=stats_team_link href = "./admin.html">
+                                        <img class="team_logo" abbr="BOS" href="images/BOS_logo.jpg">
+                                        1. James Harden 
+                                    </a> 
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="category_text">
+                                    <a class=stats_team_link href = "./admin.html">
+                                        <img class="team_logo" abbr="BKN" href="images/BKN_logo.jpg">
+                                        2. James Harden
+                                    </a> 
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="category_text">
+                                    <a class=stats_team_link href = "./admin.html">
+                                        <img class="team_logo" abbr="NYK" href="images/NYK_logo.jpg">
+                                        3. James Harden
+                                    </a> 
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="category_text">
+                                    <a class=stats_team_link href = "./admin.html">
+                                        <img class="team_logo" abbr="PHI" href="images/PHI_logo.jpg">
+                                        4. James Harden
+                                    </a> 
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="category_text">
+                                    <a class=stats_team_link href = "./admin.html">
+                                        <img class="team_logo" abbr="TOR" href="images/TOR_logo.jpg">
+                                        5. James Harden
+                                    </a> 
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+
+                </section>
+                <!--Three Point Made-->
+                <section class="landing">
+                    <div class="category-header">
+                        <h2 class="category_header_name">Three Point Made</h2>
+                        <div class="clear">
+                            <hr style="width: 150px;height:1px;border:none;border-top:1px solid rgb(0, 0, 0);" />
+                        </div>
+                    </div>
+                    <div class="category-body">
+                        <table>
+                            <tr>
+                                <td class="category_text">
+                                    <a class=stats_team_link href = "./admin.html">
+                                        <img class="team_logo" abbr="BOS" href="images/BOS_logo.jpg">
+                                        1. Stephen Curry
+                                    </a> 
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="category_text">
+                                    <a class=stats_team_link href = "./admin.html">
+                                        <img class="team_logo" abbr="BKN" href="images/BKN_logo.jpg">
+                                        2. Stephen Curry
+                                    </a> 
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="category_text">
+                                    <a class=stats_team_link href = "./admin.html">
+                                        <img class="team_logo" abbr="NYK" href="images/NYK_logo.jpg">
+                                        3. Stephen Curry
+                                    </a> 
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="category_text">
+                                    <a class=stats_team_link href = "./admin.html">
+                                        <img class="team_logo" abbr="PHI" href="images/PHI_logo.jpg">
+                                        4. Stephen Curry
+                                    </a> 
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="category_text">
+                                    <a class=stats_team_link href = "./admin.html">
+                                        <img class="team_logo" abbr="TOR" href="images/TOR_logo.jpg">
+                                        5. Stephen Curry
+                                    </a> 
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+
+                </section>
+                
+            </div>
+        </div>
+    </div>
+    <script async type="text/javascript" src="../js/bulma.js"></script>
+</body>
+
+</html>
