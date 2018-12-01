@@ -141,4 +141,70 @@ button{
   height:15px;
 }
 
+.player-summary_top{
+  color:white;
+  background-color: #032f4f;
+  overflow: hidden;
+}
+.player-summary_bottom{
+  background-color:#032f4f;
+  color:white;
+  overflow:hidden;
+}
+.player-summary_image{
+  float:left;
+}
+.player-summary_info{
+  margin-top:5%;
+  height:150px;
+}
 
+.player-summary_col{
+  float:left;
+  width:15%;
+}
+
+.player-summary_col2{
+  height: 76px;
+  width:13.75%;
+  line-height: 30px;
+  text-align: center;
+  vertical-align: middle;
+  float:left;
+
+  border-style:solid;
+  border-width: 1px;
+  border-color:gray;
+}
+
+.player-summary_col3{
+  height: 76px;
+  width:12.5%;
+  line-height: 30px;
+  text-align: center;
+  vertical-align: middle;
+  float:left;
+
+  border-style:solid;
+  border-width: 1px;
+  border-color:gray;
+}
+.player-summary_row{
+  font-size:10px;
+  border-style:solid;
+  border-width: 1px;
+  border-color:gray;
+}
+
+.team-summary_image{
+  margin-top:15px;
+  margin-left:5px;
+  float:left;
+  width:120px;
+  height:120px;
+}
+
+.team-summary_info{
+  margin-top:5%;
+  height:100px;
+}

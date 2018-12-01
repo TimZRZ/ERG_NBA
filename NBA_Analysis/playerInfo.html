@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>NBA Analysis</title>
+    <!-- LeanCloud SDK-->
+    <script src="https://cdn.jsdelivr.net/npm/leancloud-storage@3.11.0/dist/av-min.js"></script>
+    <!-- LeanCloud Init-->
+    <script src="js/initLeanCloud.js"></script>
+    <script src="js/playerInfo.js"></script>
+    <!-- Bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+    <!-- Bulma Version 0.7.2-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/admin.css">
+</head>
+
+<body>
+
+    <!-- START NAV -->
+    <nav class="navbar is-white">
+        <div class="container">
+            <div class="navbar-brand">
+                <a class="navbar-item brand-text" href="admin.html">NBA Analysis</a>
+                <div class="navbar-burger burger" data-target="navMenu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <div id="navMenu" class="navbar-menu">
+                <div class="navbar-start">
+                    <a class="navbar-item" href="admin.html">Home</a>
+                    <a class="navbar-item" href="admin.html">About Us</a>
+                <div class="search bar6 navbar-item">
+                    <form>
+                        <input id="searchName" type="text" placeholder="请输入球星或球队名" name="cname">
+                        <button id="searchBtn" type="submit" onclick="goToPlayer()"></button>
+                    </form>
+                </div>
+                </div>
+
+            </div>
+        </div>
+    </nav>
+    <!-- END NAV -->
+    <div class="container">
+        <div class="player-summary_top">
+            
+            <div class="player-summary_image">
+                <img id="playerPhoto" player-headshot="" player-id="1628391" team-id="1610612749" season="2018" class="player-img" src="https://ak-static.cms.nba.com/wp-content/uploads/headshots/nba/1610612749/2018/260x190/1628391.png" alt="D.J. Wilson" title="D.J. Wilson">
+            </div>
+
+            <div class="player-summary_info">
+                <div class="player-summary__info-top">
+                    <span ng-if="playerInfo.JERSEY" class="player-summary__player-number"><span class="player-summary__hash">#</span>5</span>
+                    <div class="player-summary__player-name">
+                        <p id = "name">D.J.</p>
+                    </div>
+                </div>
+                <div class="player-summary_info-bottom">
+                    <span class="player-summary_pos">F | </span>
+                    <a ng-href="/team/1610612749/" href="/team/1610612749/"><span class="player-summary__team-name">Milwaukee Bucks</span></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="player-summary_bottom">
+            <div class="player-summary_col">
+                <div class="player-summary_row">
+                    <div class="player-state">HT</div>
+                    <span class="player-value">10</span>
+                </div>
+                <div class="player-summary_row">
+                    <div class="player-state">AGE</div>
+                    <span class="player-value">22</span>
+                </div>
+            </div>
+
+            <div class="player-summary_col">
+                <div class="player-summary_row">
+                    <div class="player-state">WT</div>
+                    <span class="player-value">231</span>
+                </div>
+                <div class="player-summary_row">
+                    <div class="player-state">BORN</div>
+                    <span class="player-value">1997.12.17</span>
+                </div>
+            </div>
+            
+            <div class="player-summary_col">
+                <div class="player-summary_row">
+                    <div class="player-state">Prior</div>
+                    <span class="player-value">Michigan</span>
+                </div>
+    
+                <div class="player-summary_row">
+                    <div class="player-state">Exp</div>
+                    <span class="player-value">1yrs</span>
+                </div>
+            </div>
+            
+            <div class="player-summary_col2">
+                <div class="player-state">PTS</div>
+                <span class="player-value">1.0</span>
+            </div>
+            <div class="player-summary_col2">
+                <div class="player-state">REB</div>
+                <span class="player-value">1.0</span>
+            </div>
+            <div class="player-summary_col2">
+                <div class="player-state">AST</div>
+                <span class="player-value">1.0</span>
+            </div>
+            <div class="player-summary_col2">
+                <div class="player-state">PIE</div>
+                <span class="player-value">1.0</span>
+            </div>
+        </div>
+
+            
+    </div>
+</body>
+
+</html>
