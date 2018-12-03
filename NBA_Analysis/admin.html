@@ -16,6 +16,7 @@
     <!-- Bulma Version 0.7.2-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css" />
     <link rel="stylesheet" type="text/css" href="css/admin.css">
+
 </head>
 
 <body>
@@ -35,12 +36,19 @@
                 <div class="navbar-start">
                     <a class="navbar-item" href="admin.html">Home</a>
                     <a class="navbar-item" href="admin.html">About Us</a>
-                <div class="search bar6 navbar-item">
+                <!-- <div class="search bar6 navbar-item">
                     <form>
                         <input id="searchName" type="text" placeholder="请输入球星或球队名" name="cname">
                         <button id="searchBtn" type="submit" onclick="goToPlayer()"></button>
                     </form>
-                </div>
+                </div> -->
+                    <div class="search bar6 navbar-item">
+                    <form>
+                        <input type="text" id="search_text" autocomplete="off" placeholder="请输入球星或球队名" />
+                        <button id="search" type="submit" onclick="goTo()"> </button>
+                        <div id="auto_div"> </div>
+                    </form>
+                    </div>
                 </div>
 
             </div>

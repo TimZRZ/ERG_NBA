@@ -70,8 +70,7 @@ nav.navbar {
   font-weight: 700;
   color: #8F99A3;
 }
-.card-footer-item:hover {
-}
+
 .card-table .table {
   margin-bottom: 0;
 }
@@ -190,10 +189,16 @@ button{
   border-color:gray;
 }
 .player-summary_row{
+  overflow:hidden;
   font-size:10px;
   border-style:solid;
   border-width: 1px;
   border-color:gray;
+}
+
+#player_university{
+  width:172.8px;
+  white-space:nowrap;
 }
 
 .team-summary_image{
@@ -207,4 +212,17 @@ button{
 .team-summary_info{
   margin-top:5%;
   height:100px;
+}
+
+#auto_div
+{
+    display: none;
+    width: 300px;
+    background: #FFF;
+    position: absolute;
+    top: 44px;
+    left: 0;
+    height: 200px;
+    color: #323232;
+    overflow: hidden;
 }

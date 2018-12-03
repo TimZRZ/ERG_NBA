@@ -37,8 +37,9 @@
                     <a class="navbar-item" href="admin.html">About Us</a>
                     <div class="search bar6 navbar-item">
                         <form>
-                            <input id="searchName" type="text" placeholder="请输入球星或球队名" name="cname">
-                            <button id="searchBtn" type="submit" onclick="goToPlayer()"></button>
+                            <input type="text" id="search_text" autocomplete="off" placeholder="请输入球星或球队名" />
+                        <button id="search" type="submit" onclick="goTo()"> </button>
+                        <div id="auto_div"> </div>
                         </form>
                     </div>
                 </div>

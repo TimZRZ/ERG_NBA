@@ -10,6 +10,8 @@
     <script src="https://cdn.jsdelivr.net/npm/leancloud-storage@3.11.0/dist/av-min.js"></script>
     <!-- LeanCloud Init-->
     <script src="js/initLeanCloud.js"></script>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/search.js"></script>
     <script src="js/playerInfo.js"></script>
     <!-- Bootstrap-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -38,8 +40,9 @@
                     <a class="navbar-item" href="admin.html">About Us</a>
                 <div class="search bar6 navbar-item">
                     <form>
-                        <input id="searchName" type="text" placeholder="请输入球星或球队名" name="cname">
-                        <button id="searchBtn" type="submit" onclick="goToPlayer()"></button>
+                        <input type="text" id="search_text" autocomplete="off" placeholder="请输入球星或球队名" />
+                        <button id="search" type="submit" onclick="goTo()"> </button>
+                        <div id="auto_div"> </div>
                     </form>
                 </div>
                 </div>
@@ -57,14 +60,14 @@
 
             <div class="player-summary_info">
                 <div class="player-summary__info-top">
-                    <span ng-if="playerInfo.JERSEY" class="player-summary__player-number"><span class="player-summary__hash">#</span>5</span>
+                    <span ng-if="playerInfo.JERSEY" class="player-summary__player-number"id="player_number"><span class="player-summary__hash">#</span></span>
                     <div class="player-summary__player-name">
                         <p id = "name">D.J.</p>
                     </div>
                 </div>
                 <div class="player-summary_info-bottom">
-                    <span class="player-summary_pos">F | </span>
-                    <a ng-href="/team/1610612749/" href="/team/1610612749/"><span class="player-summary__team-name">Milwaukee Bucks</span></a>
+                    <p id="player_team"></p>
+                    
                 </div>
             </div>
         </div>
@@ -73,34 +76,34 @@
             <div class="player-summary_col">
                 <div class="player-summary_row">
                     <div class="player-state">HT</div>
-                    <span class="player-value">10</span>
+                    <span id="player_height"class="player-value"></span>
                 </div>
                 <div class="player-summary_row">
-                    <div class="player-state">AGE</div>
-                    <span class="player-value">22</span>
+                    <div class="player-state">WT</div>
+                    <span id="player_weight"class="player-value"></span>
                 </div>
             </div>
 
             <div class="player-summary_col">
                 <div class="player-summary_row">
-                    <div class="player-state">WT</div>
-                    <span class="player-value">231</span>
+                    <div class="player-state">Pos</div>
+                    <span id="player_position"class="player-value"></span>
                 </div>
                 <div class="player-summary_row">
                     <div class="player-state">BORN</div>
-                    <span class="player-value">1997.12.17</span>
+                    <span id="player_birth" class="player-value"></span>
                 </div>
             </div>
             
             <div class="player-summary_col">
                 <div class="player-summary_row">
-                    <div class="player-state">Prior</div>
-                    <span class="player-value">Michigan</span>
+                    <div class="player-state">From</div>
+                    <span id="player_begin"class="player-value"></span>
                 </div>
     
                 <div class="player-summary_row">
-                    <div class="player-state">Exp</div>
-                    <span class="player-value">1yrs</span>
+                    <div class="player-state">Prior</div>
+                    <span id="player_university" class="player-value"></span>
                 </div>
             </div>
             
