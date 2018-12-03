@@ -3,7 +3,8 @@ var argsIndex = url .split("?name=");
 var arg = argsIndex[1];
 var name = arg.split("%20")[0];
 var query_name = new AV.Query('Player');
-alert(typeof(name));
+
+//同步球员各项信息
 query_name.equalTo('Name',name);
 query_name.find().then(function(todo){
   var player_name = todo[0].get('Name');
@@ -13,8 +14,6 @@ query_name.find().then(function(todo){
   var player_birth = todo[0].get('Birth_Date');
   var player_begin = todo[0].get('From');
   var player_university = todo[0].get('Colleges');
-  
-  //同步球员各项信息
   document.getElementById("name").innerHTML= player_name;
   document.getElementById("player_height").innerHTML=player_height;
   document.getElementById("player_weight").innerHTML=player_weight;
@@ -38,6 +37,28 @@ query_teamInfo.equalTo('Player',name);
 query_teamInfo.find().then(function(todo){
   var player_number = todo[0].get('No_');
   var player_team = todo[0].get('Team');
-  document.getElementById('player_number').innerHTML = player_number;
+  document.getElementById('player_number').innerHTML = '# ' + player_number;
   document.getElementById('player_team').innerHTML = player_team;
+});
+
+//同步球员场均数据
+var query_performace = new AV.Query('Performance');
+query_performace.equalTo('Name', name);
+query_performace.find().then(function(todo){
+  var pts = todo[0].get('avg_points');
+  if (pts != -1){
+    document.getElementById('pts').innerHTML = pts.toFixed(1);
+  }
+  var reb = todo[0].get('avg_rebound');
+  if (reb != -1){
+    document.getElementById('reb').innerHTML = reb.toFixed(1);
+  }
+  var ast = todo[0].get('avg_assist');
+  if (ast != -1){
+    document.getElementById('ast').innerHTML = ast.toFixed(1);
+  }
+  var threepts = todo[0].get('avg_3_points');
+  if (threepts != -1){
+    document.getElementById('3pts').innerHTML = threepts.toFixed(1);
+  }
 });

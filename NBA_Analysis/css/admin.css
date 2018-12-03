@@ -10,11 +10,11 @@ nav.navbar {
   margin-bottom: 1rem;
 }
 .navbar-item.brand-text {
-  font-weight: 300;
+  font-weight: bolder
 }
 .navbar-item, .navbar-link {
   font-size: 14px;
-  font-weight: 700;
+  font-weight: 500;
 }
 .columns {
   width: 100%;
@@ -136,8 +136,9 @@ button{
 	color:#F9F0DA;
 }
 .team_logo{
-  width:15px;
-  height:15px;
+  width:25px;
+  height:25px;
+  margin-right: 5px;
 }
 
 .player-summary_top{
@@ -151,11 +152,12 @@ button{
   overflow:hidden;
 }
 .player-summary_image{
-  float:left;
+  float: left;
 }
 .player-summary_info{
-  margin-top:5%;
-  height:150px;
+  margin-top: 50px;
+  margin-left: 20px;
+  height: 100px;
 }
 
 .player-summary_col{
@@ -164,7 +166,7 @@ button{
 }
 
 .player-summary_col2{
-  height: 76px;
+  height: 82px;
   width:13.75%;
   line-height: 30px;
   text-align: center;
@@ -196,13 +198,31 @@ button{
   border-color:gray;
 }
 
-#player_university{
-  width:172.8px;
-  white-space:nowrap;
+.player-state-1{
+  font-size: 12px;
+  margin-left: 8px;
+  font-weight: bold;
+}
+
+.player-value-1{
+  font-size: 14px;
+  text-align: center;
+}
+
+.player-state-2{
+  font-size: 20px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.player-value-2{
+  margin-top: 12px;
+  font-size: 20px;
+  text-align: center;
 }
 
 .team-summary_image{
-  margin-top:15px;
+  margin-top:20px;
   margin-left:5px;
   float:left;
   width:120px;
@@ -225,4 +245,9 @@ button{
     height: 200px;
     color: #323232;
     overflow: hidden;
+}
+
+.stats_team_link{
+  display: flex;
+  text-align: center;
 }
