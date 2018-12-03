@@ -8,6 +8,8 @@
     <title>NBA Analysis</title>
     <script src="https://cdn.jsdelivr.net/npm/leancloud-storage@3.11.0/dist/av-min.js"></script>
     <script src="js/initLeanCloud.js"></script>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/search.js"></script>
     <!-- Bootstrap-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
@@ -23,8 +25,8 @@
         <div class="container">
             <div class="navbar-brand">
                 <a class="navbar-item brand-text" href="admin.html">
-          NBA Analysis
-        </a>
+                    NBA Analysis
+                </a>
                 <div class="navbar-burger burger" data-target="navMenu">
                     <span></span>
                     <span></span>
@@ -34,15 +36,16 @@
             <div id="navMenu" class="navbar-menu">
                 <div class="navbar-start">
                     <a class="navbar-item" href="admin.html">
-            Home
-          </a>
+                        Home
+                    </a>
                     <a class="navbar-item" href="admin.html">
-            About Us
-          </a>
+                        About Us
+                    </a>
                 <div class="search bar6 navbar-item">
                     <form>
-                        <input id="searchName" type="text" placeholder="请输入球星或球队名" name="cname">
-                        <button id="searchBtn" type="submit" onclick="goToPlayer()"></button>
+                        <input type="text" id="search_text" autocomplete="off" placeholder="请输入球星或球队名" />
+                        <button id="search" type="submit" onclick="goTo()"> </button>
+                        <div id="auto_div"> </div>
                     </form>
                 </div>
                 </div>
