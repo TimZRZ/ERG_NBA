@@ -18,7 +18,7 @@ AV.Cloud.run('top_five', paramsJson).then(function(data){
     url3=encodeURI(url3);
     document.getElementById("3pt").href = url3;
     var url4 = "playerInfo.html?name="+data[3]['Name'];;
-    url4=encodeURI(url1);
+    url4=encodeURI(url4);
     document.getElementById("4pt").href = url4;
     var url5 = "playerInfo.html?name="+data[4]['Name'];;
     url5=encodeURI(url5);
@@ -72,7 +72,7 @@ AV.Cloud.run('top_five', paramsJson).then(function(data){
     url3=encodeURI(url3);
     document.getElementById("3as").href = url3;
     var url4 = "playerInfo.html?name="+data[3]['Name'];;
-    url4=encodeURI(url1);
+    url4=encodeURI(url4);
     document.getElementById("4as").href = url4;
     var url5 = "playerInfo.html?name="+data[4]['Name'];;
     url5=encodeURI(url5);
@@ -99,7 +99,7 @@ AV.Cloud.run('top_five', paramsJson).then(function(data){
     url3=encodeURI(url3);
     document.getElementById("3st").href = url3;
     var url4 = "playerInfo.html?name="+data[3]['Name'];;
-    url4=encodeURI(url1);
+    url4=encodeURI(url4);
     document.getElementById("4st").href = url4;
     var url5 = "playerInfo.html?name="+data[4]['Name'];;
     url5=encodeURI(url5);
@@ -126,7 +126,7 @@ AV.Cloud.run('top_five', paramsJson).then(function(data){
     url3=encodeURI(url3);
     document.getElementById("33p").href = url3;
     var url4 = "playerInfo.html?name="+data[3]['Name'];;
-    url4=encodeURI(url1);
+    url4=encodeURI(url4);
     document.getElementById("43p").href = url4;
     var url5 = "playerInfo.html?name="+data[4]['Name'];;
     url5=encodeURI(url5);
