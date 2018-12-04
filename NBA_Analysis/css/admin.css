@@ -178,6 +178,17 @@ button{
   border-color:gray;
 }
 
+.team_summary1{
+  font-size: 20px;
+  text-align: center;
+  font-weight: bold;
+}
+.team_summary2{
+  margin-top: 12px;
+  font-size: 20px;
+  text-align: center;
+}
+
 .player-summary_col3{
   height: 76px;
   width:12.5%;
@@ -191,6 +202,7 @@ button{
   border-color:gray;
 }
 .player-summary_row{
+  white-space: nowrap;
   overflow:hidden;
   font-size:10px;
   border-style:solid;
@@ -218,6 +230,7 @@ button{
   font-size: 20px;
   text-align: center;
   font-weight: bold;
+  font-weight: normal;
 }
 
 .player-value-2{
@@ -225,6 +238,20 @@ button{
   font-size: 20px;
   text-align: center;
 }
+
+
+.team-state-2{
+  font-size: 15px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.team-value-2{
+  margin-top: 5px;
+  font-size: 20px;
+  text-align: center;
+}
+
 
 .team-summary_image{
   margin-top:20px;

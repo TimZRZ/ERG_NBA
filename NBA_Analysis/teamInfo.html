@@ -6,10 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>NBA Analysis</title>
+    <!-- LeanCloud SDK & Initialization-->
     <script src="https://cdn.jsdelivr.net/npm/leancloud-storage@3.11.0/dist/av-min.js"></script>
     <script src="js/initLeanCloud.js"></script>
+    <!-- jQuery-->
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/search.js"></script>
+    <script src="js/teamInfo.js"></script>
     <!-- Bootstrap-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
@@ -44,7 +47,7 @@
                 <div class="search bar6 navbar-item">
                     <form>
                         <input type="text" id="search_text" autocomplete="off" placeholder="请输入球星或球队名" />
-                        <button id="search" type="submit" onclick="goTo()"> </button>
+                        <button id="search" type="submit" onclick="goTo(); return false;"> </button>
                         <div id="auto_div"> </div>
                     </form>
                 </div>
@@ -58,14 +61,13 @@
         <div class="player-summary_top">
             
             <div class="team-summary_image">
-                <img src="https://stats.nba.com/media/img/teams/logos/MIL_logo.svg">
+                <img id="team_logo"src="https://www.nba.com/.element/img/2.0/sect/statscube/players/large/default_nba_headshot_v2.png">
             </div>
 
             <div class="team-summary_info">
                 <div class="player-summary__info-top">
                     <div class="player-summary__player-name">
-                        <p class="player-summary__first-name">MILWAUKEE</p>
-                        <p class="player-summary__last-name">BUCKS</p>
+                        <p id="team_name"class="player-summary__first-name">MILWAUKEE</p>
                     </div>
                 </div>
             </div>
@@ -73,36 +75,36 @@
 
         <div class="player-summary_bottom">
             <div class="player-summary_col3">
-                <div class="player-state">PPG</div>
-                <span class="player-value">1ST</span>
+                <div class="team-state-2">Conference</div>
+                <p id="team_conference" class="team-value-2"></p>
             </div>
             <div class="player-summary_col3">
-                <div class="player-state">RPG</div>
-                <span class="player-value">1ST</span>
+                <div class="team-state-2">Abbr</div>
+                <p id="team_abbr" class="team-value-2"></p>
             </div>
             <div class="player-summary_col3">
-                <div class="player-state">APG</div>
-                <span class="player-value">1ST</span>
+                <div class="team-state-2">From</div>
+                <p id="team_from"class="team-value-2"></p>
             </div>
             <div class="player-summary_col3">
-                <div class="player-state">OPG</div>
-                <span class="player-value">1ST</span>
+                <div class="team-state-2">To</div>
+                <p id="team_to"class="team-value-2"></p>
             </div>
             <div class="player-summary_col3">
-                <div class="player-state">OPG</div>
-                <span class="player-value">1ST</span>
+                <div class="team-state-2">Total Game</div>
+                <p id="team_game"class="team-value-2"></p>
             </div>
             <div class="player-summary_col3">
-                <div class="player-state">RECORDS</div>
-                <span class="player-value">???</span>
+                <div class="team-state-2">Win Rate</div>
+                <p id="team_win_rate"class="team-value-2"></p>
             </div>
             <div class="player-summary_col3">
-                <div class="player-state">EASTEN CONF</div>
-                <span class="player-value">RANK #1</span>
+                <div class="team-state-2">Playoffs</div>
+                <p id="team_playoff" class="team-value-2"></p>
             </div>
             <div class="player-summary_col3">
-                <div class="player-state">CENTRAL DIV</div>
-                <span class="player-value">RANK #1</span>
+                <div class="team-state-2">Champion</div>
+                <p id="team_champion" class="team-value-2"></p>
             </div>
     
 
