@@ -83,6 +83,17 @@
                     </ul>
                 </nav>
                 <!--Atlantic-->
+                <script>
+                    var team = new AV.Query("Team");
+                    team.select('Franchise');
+                    team.find().then(function(todo){
+                        for (i in todo) {
+                            var url = "teamInfo.html?name="+todo[i].get('Franchise');
+                            url=encodeURI(url);   
+                            document.getElementById(todo[i].get('Franchise')).href= url;
+                        }
+                    })
+                </script>
                 <section class="landing">
                     <div class="category-header">
                         <h2 class="category_header_name">Atlantic</h2>
@@ -94,7 +105,7 @@
                         <table>
                             <tr>
                                 <td class="category_text">
-                                    <a class=stats_team_link href = "./admin.html">
+                                    <a id="Boston Celtics" class=stats_team_link href = "./admin.html">
                                         <img class="team_logo" abbr="BOS" src="https://stats.nba.com/media/img/teams/logos/BOS_logo.svg">
                                         Boston Celtics
                                     </a> 
@@ -102,7 +113,7 @@
                             </tr>
                             <tr>
                                 <td class="category_text">
-                                    <a class=stats_team_link href = "./admin.html">
+                                    <a id="Brooklyn Nets" class=stats_team_link href = "./admin.html">
                                         <img class="team_logo" abbr="BKN" src="https://stats.nba.com/media/img/teams/logos/BKN_logo.svg">
                                         Brooklyn Nets
                                     </a> 
@@ -110,7 +121,7 @@
                             </tr>
                             <tr>
                                 <td class="category_text">
-                                    <a class=stats_team_link href = "./admin.html">
+                                    <a id="New York Knicks" class=stats_team_link href = "./admin.html">
                                         <img class="team_logo" abbr="NYK" src="https://stats.nba.com/media/img/teams/logos/NYK_logo.svg">
                                         New York Knicks
                                     </a> 
@@ -118,7 +129,7 @@
                             </tr>
                             <tr>
                                 <td class="category_text">
-                                    <a class=stats_team_link href = "./admin.html">
+                                    <a id="Philadelphia 76ers" class=stats_team_link href = "./admin.html">
                                         <img class="team_logo" abbr="PHI" src="https://stats.nba.com/media/img/teams/logos/PHI_logo.svg">
                                         Philadelphia 76ers
                                     </a> 
@@ -126,7 +137,7 @@
                             </tr>
                             <tr>
                                 <td class="category_text">
-                                    <a class=stats_team_link href = "./admin.html">
+                                    <a id="Toronto Raptors" class=stats_team_link href = "./admin.html">
                                         <img class="team_logo" abbr="TOR" src="https://stats.nba.com/media/img/teams/logos/TOR_logo.svg">
                                         Toronto Raptors
                                     </a> 
@@ -148,7 +159,7 @@
                         <table>
                             <tr>
                                 <td class="category_text">
-                                    <a class=stats_team_link href = "./admin.html">
+                                    <a id="Chicago Bulls" class=stats_team_link href = "./admin.html">
                                         <img class="team_logo" abbr="CHI" src="https://stats.nba.com/media/img/teams/logos/CHI_logo.svg">
                                         Chicago Bulls
                                     </a> 
@@ -156,7 +167,7 @@
                             </tr>
                             <tr>
                                 <td class="category_text">
-                                    <a class=stats_team_link href = "./admin.html">
+                                    <a id="Cleveland Cavaliers" class=stats_team_link href = "./admin.html">
                                         <img class="team_logo" abbr="BKN" src="https://stats.nba.com/media/img/teams/logos/CLE_logo.svg">
                                         Cleveland Cavaliers
                                     </a> 
@@ -164,7 +175,7 @@
                             </tr>
                             <tr>
                                 <td class="category_text">
-                                    <a class=stats_team_link href = "./admin.html">
+                                    <a id="Detroit Pistons" class=stats_team_link href = "./admin.html">
                                         <img class="team_logo" abbr="DET" src="https://stats.nba.com/media/img/teams/logos/DET_logo.svg">
                                         Detroit Pistons
                                     </a> 
@@ -172,7 +183,7 @@
                             </tr>
                             <tr>
                                 <td class="category_text">
-                                    <a class=stats_team_link href = "./admin.html">
+                                    <a id="Indiana Pacers" class=stats_team_link href = "./admin.html">
                                         <img class="team_logo" abbr="IND" src="https://stats.nba.com/media/img/teams/logos/IND_logo.svg">
                                         Indiana Pacers
                                     </a> 
@@ -180,7 +191,7 @@
                             </tr>
                             <tr>
                                 <td class="category_text">
-                                    <a class=stats_team_link href = "./admin.html">
+                                    <a id="Milwaukee Bucks" class=stats_team_link href = "./admin.html">
                                         <img class="team_logo" abbr="MIL" src="https://stats.nba.com/media/img/teams/logos/MIL_logo.svg">
                                         Milwaukee Bucks
                                     </a> 
@@ -203,7 +214,7 @@
                         <table>
                             <tr>
                                 <td class="category_text">
-                                    <a class=stats_team_link href = "./admin.html">
+                                    <a id="Atlanta Hawks" class=stats_team_link href = "./admin.html">
                                         <img class="team_logo" abbr="ATL" src="https://stats.nba.com/media/img/teams/logos/ATL_logo.svg">
                                         Atlanta Hawks
                                     </a> 
@@ -211,7 +222,7 @@
                             </tr>
                             <tr>
                                 <td class="category_text">
-                                    <a class=stats_team_link href = "./admin.html">
+                                    <a id="Charlotte Hornets" class=stats_team_link href = "./admin.html">
                                         <img class="team_logo" abbr="CHA" src="https://stats.nba.com/media/img/teams/logos/CHA_logo.svg">
                                         Charlotte Hornets
                                     </a> 
@@ -219,7 +230,7 @@
                             </tr>
                             <tr>
                                 <td class="category_text">
-                                    <a class=stats_team_link href = "./admin.html">
+                                    <a id="Miami Heat" class=stats_team_link href = "./admin.html">
                                         <img class="team_logo" abbr="MIA" src="https://stats.nba.com/media/img/teams/logos/MIA_logo.svg">
                                         Miami Heat
                                     </a> 
@@ -227,7 +238,7 @@
                             </tr>
                             <tr>
                                 <td class="category_text">
-                                    <a class=stats_team_link href = "./admin.html">
+                                    <a id="Orlando Magic" class=stats_team_link href = "./admin.html">
                                         <img class="team_logo" abbr="ORL" src="https://stats.nba.com/media/img/teams/logos/ORL_logo.svg">
                                         Orlando Magic
                                     </a> 
@@ -235,7 +246,7 @@
                             </tr>
                             <tr>
                                 <td class="category_text">
-                                    <a class=stats_team_link href = "./admin.html">
+                                    <a id="Washington Wizards" class=stats_team_link href = "./admin.html">
                                         <img class="team_logo" abbr="WAS" src="https://stats.nba.com/media/img/teams/logos/WAS_logo.svg">
                                         Washington Wizards
                                     </a> 
@@ -258,7 +269,7 @@
                         <table>
                             <tr>
                                 <td class="category_text">
-                                    <a class=stats_team_link href = "./admin.html">
+                                    <a id="Denver Nuggets" class=stats_team_link href = "./admin.html">
                                         <img class="team_logo" abbr="DEN" src="https://stats.nba.com/media/img/teams/logos/DEN_logo.svg">
                                         Denver Nuggets
                                     </a> 
@@ -266,7 +277,7 @@
                             </tr>
                             <tr>
                                 <td class="category_text">
-                                    <a class=stats_team_link href = "./admin.html">
+                                    <a id="Minnesota Timberwolves" class=stats_team_link href = "./admin.html">
                                         <img class="team_logo" abbr="MIN" src="https://stats.nba.com/media/img/teams/logos/MIN_logo.svg">
                                         Minnesota Timberwolves
                                     </a> 
@@ -274,7 +285,7 @@
                             </tr>
                             <tr>
                                 <td class="category_text">
-                                    <a class=stats_team_link href = "./admin.html">
+                                    <a id="Oklahoma City Thunder" class=stats_team_link href = "./admin.html">
                                         <img class="team_logo" abbr="OKC" src="https://stats.nba.com/media/img/teams/logos/OKC_logo.svg">
                                         Oklahoma City Thunder
                                     </a> 
@@ -282,7 +293,7 @@
                             </tr>
                             <tr>
                                 <td class="category_text">
-                                    <a class=stats_team_link href = "./admin.html">
+                                    <a id="Portland Trail Blazers" class=stats_team_link href = "./admin.html">
                                         <img class="team_logo" abbr="POR" src="https://stats.nba.com/media/img/teams/logos/POR_logo.svg">
                                         Portland Trail Blazers
                                     </a> 
@@ -290,7 +301,7 @@
                             </tr>
                             <tr>
                                 <td class="category_text">
-                                    <a class=stats_team_link href = "./admin.html">
+                                    <a id="Utah Jazz" class=stats_team_link href = "./admin.html">
                                         <img class="team_logo" abbr="UTA" src="https://stats.nba.com/media/img/teams/logos/UTA_logo.svg">
                                         Utah Jazz
                                     </a> 
@@ -312,7 +323,7 @@
                         <table>
                             <tr>
                                 <td class="category_text">
-                                    <a class=stats_team_link href = "./admin.html">
+                                    <a id="Golden State Warriors" class=stats_team_link href = "./admin.html">
                                         <img class="team_logo" abbr="GSW" src="https://stats.nba.com/media/img/teams/logos/GSW_logo.svg">
                                         Golden State Warriors
                                     </a> 
@@ -320,15 +331,15 @@
                             </tr>
                             <tr>
                                 <td class="category_text">
-                                    <a class=stats_team_link href = "./admin.html">
+                                    <a id="Los Angeles Clippers" class=stats_team_link href = "./admin.html">
                                         <img class="team_logo" abbr="LAC" src="https://stats.nba.com/media/img/teams/logos/LAC_logo.svg">
-                                        LA Clippers
+                                        Los Angeles Clippers
                                     </a> 
                                 </td>
                             </tr>
                             <tr>
                                 <td class="category_text">
-                                    <a class=stats_team_link href = "./admin.html">
+                                    <a id="Los Angeles Lakers" class=stats_team_link href = "./admin.html">
                                         <img class="team_logo" abbr="LAL" src="https://stats.nba.com/media/img/teams/logos/LAL_logo.svg">
                                         Los Angeles Lakers
                                     </a> 
@@ -336,7 +347,7 @@
                             </tr>
                             <tr>
                                 <td class="category_text">
-                                    <a class=stats_team_link href = "./admin.html">
+                                    <a id="Phoenix Suns" class=stats_team_link href = "./admin.html">
                                         <img class="team_logo" abbr="PHX" src="https://stats.nba.com/media/img/teams/logos/PHX_logo.svg">
                                         Phoenix Suns
                                     </a> 
@@ -344,7 +355,7 @@
                             </tr>
                             <tr>
                                 <td class="category_text">
-                                    <a class=stats_team_link href = "./admin.html">
+                                    <a id="Sacramento Kings" class=stats_team_link href = "./admin.html">
                                         <img class="team_logo" abbr="SAC" src="https://stats.nba.com/media/img/teams/logos/SAC_logo.svg">
                                         Sacramento Kings
                                     </a> 
@@ -366,7 +377,7 @@
                         <table>
                             <tr>
                                 <td class="category_text">
-                                    <a class=stats_team_link href = "./admin.html">
+                                    <a id="Dallas Mavericks" class=stats_team_link href = "./admin.html">
                                         <img class="team_logo" abbr="DAL" src="https://stats.nba.com/media/img/teams/logos/DAL_logo.svg">
                                         Dallas Mavericks
                                     </a> 
@@ -374,7 +385,7 @@
                             </tr>
                             <tr>
                                 <td class="category_text">
-                                    <a class=stats_team_link href = "./admin.html">
+                                    <a id="Houston Rockets" class=stats_team_link href = "./admin.html">
                                         <img class="team_logo" abbr="HOU" src="https://stats.nba.com/media/img/teams/logos/HOU_logo.svg">
                                         Houston Rockets
                                     </a> 
@@ -382,7 +393,7 @@
                             </tr>
                             <tr>
                                 <td class="category_text">
-                                    <a class=stats_team_link href = "./admin.html">
+                                    <a id="Memphis Grizzlies" class=stats_team_link href = "./admin.html">
                                         <img class="team_logo" abbr="MEM" src="https://stats.nba.com/media/img/teams/logos/MEM_logo.svg">
                                         Memphis Grizzlies
                                     </a> 
@@ -390,7 +401,7 @@
                             </tr>
                             <tr>
                                 <td class="category_text">
-                                    <a class=stats_team_link href = "./admin.html">
+                                    <a id="New Orleans Pelicans" class=stats_team_link href = "./admin.html">
                                         <img class="team_logo" abbr="NOP" src="https://stats.nba.com/media/img/teams/logos/NOP_logo.svg">
                                         New Orleans Pelicans
                                     </a> 
@@ -398,7 +409,7 @@
                             </tr>
                             <tr>
                                 <td class="category_text">
-                                    <a class=stats_team_link href = "./admin.html">
+                                    <a id="San Antonio Spurs" class=stats_team_link href = "./admin.html">
                                         <img class="team_logo" abbr="SAS" src="https://stats.nba.com/media/img/teams/logos/SAS_logo.svg">
                                         San Antonio Spurs
                                     </a> 

@@ -45,7 +45,7 @@ AV.Cloud.run('top_five', paramsJson).then(function(data){
     url3=encodeURI(url3);
     document.getElementById("3rb").href = url3;
     var url4 = "playerInfo.html?name="+data[3]['Name'];;
-    url4=encodeURI(url1);
+    url4=encodeURI(url4);
     document.getElementById("4rb").href = url4;
     var url5 = "playerInfo.html?name="+data[4]['Name'];;
     url5=encodeURI(url5);

@@ -20,7 +20,11 @@ query_name.find().then(function(todo){
   document.getElementById("player_position").innerHTML=player_position;
   document.getElementById("player_birth").innerHTML=player_birth;
   document.getElementById("player_begin").innerHTML=player_begin;
-  document.getElementById("player_university").innerHTML=player_university;
+  if (player_university.length < 27) {
+    document.getElementById("player_university").innerHTML=player_university;
+  } else {
+    document.getElementById("player_university").innerHTML="undefined";
+  }
 });
 
 //同步球员照片
@@ -39,6 +43,14 @@ query_teamInfo.find().then(function(todo){
   var player_team = todo[0].get('Team');
   document.getElementById('player_number').innerHTML = '# ' + player_number;
   document.getElementById('player_team').innerHTML = player_team;
+
+  var query_teamName = new AV.Query('Team');
+  query_teamName.equalTo('Abbreviation', player_team);
+  query_teamName.find().then(function(todo){
+    var url = "teamInfo.html?name="+todo[0].get('Franchise');
+    url=encodeURI(url);   
+    document.getElementById('player_team').href= url;
+  })
 });
 
 //同步球员场均数据
@@ -63,6 +75,7 @@ query_performace.find().then(function(todo){
   }
 });
 
+//图表
 var shotlist = [];
   var paramsJson = {
       player_name: name,
@@ -76,6 +89,7 @@ var shotlist = [];
                           data[i]['type'], data[i]['remaining_time']];
           shotlist.push(element);
       }
+
       var shotpointsChat = echarts.init(document.getElementById('main'));
 
       var option_shotpoints = {
@@ -97,6 +111,7 @@ var shotlist = [];
           }]
       };
       // 使用刚指定的配置项和数据显示图表。
+      shotpointsChat .hideLoading();
       shotpointsChat.setOption(option_shotpoints);
 
 
@@ -126,9 +141,6 @@ var shotlist = [];
               text: 'Shot Type'
           },
           tooltip: {},
-          // legend: {
-          //     data:['销量']
-          // },
           grid: {  
               left: '10%',  
               bottom:'35%'  
@@ -220,17 +232,8 @@ var shotlist = [];
           title: {
               text: 'Remaining Time'
           },
-          // toolbox: {
-          //     // y: 'bottom',
-          //     feature: {
-          //         magicType: { type: ['stack', 'tiled']},
-          //         dataView: {},
-          //         saveAsImage: { pixelRatio: 2}
-          //     }
-          // },
           tooltip: {},
           brush: {
-              //toolbox: ['rect', 'polygon', 'lineX', 'lineY', 'keep', 'clear'],
               toolbox: ['lineX', 'clear'],
               xAxisIndex: 0
           },

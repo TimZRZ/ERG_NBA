@@ -198,6 +198,11 @@ button{
   border-color:gray;
 }
 
+.player-summary_image{
+  width: 260px;
+  height: 190px;
+}
+
 .player-state-1{
   font-size: 12px;
   margin-left: 8px;
