@@ -36,4 +36,3 @@ query_name.find().then(function(todo){
   document.getElementById("team_champion").innerHTML=team_champion;
 
   });
-

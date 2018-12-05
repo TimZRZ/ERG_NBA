@@ -75,224 +75,350 @@ query_performace.find().then(function(todo){
   }
 });
 
-//图表
-var shotlist = [];
-  var paramsJson = {
-      player_name: name,
-      distance: -1,
-      time: -1,
-  };
-  AV.Cloud.run('player_xy', paramsJson).then(function(data) {
-      console.log(data);
-      for (i in data) {
-          var element = [parseFloat(data[i]['original_x']), parseFloat(data[i]['original_y']), 
-                          data[i]['type'], data[i]['remaining_time']];
-          shotlist.push(element);
-      }
+//图标
+var shotlist_made = [];
+var shotlist_missed = [];
+var paramsJson = {
+    player_name: name,
+    distance: -1,
+    time: -1,
+};
+AV.Cloud.run('player_xy', paramsJson).then(function(data) {
+    console.log(data);
+    for (i in data) {
+        if (data[i]['result'] == 'made') {
+            var element = [parseFloat(data[i]['original_x']), parseFloat(data[i]['original_y']), 
+                        data[i]['type'], data[i]['remaining_time']];
+            shotlist_made.push(element);
+        }
+        
+        if (data[i]['result'] == 'missed') {
+            var element = [parseFloat(data[i]['original_x']), parseFloat(data[i]['original_y']), 
+                        data[i]['type'], data[i]['remaining_time']];
+            shotlist_missed.push(element);
+        }
+    }
+    var shotpointsChat = echarts.init(document.getElementById('main'));
+    var option_shotpoints = {
+        xAxis: {
+            scale: true,
+            max: 300,
+            min: -300,
+        },
+        yAxis: {
+            scale: true,
+            max: 400,
+            min: -50,
+        },
+        tooltip: {
+            formatter: function (params) {
+                return "<li>" + 'Type: ' + params.value[2] + 
+                       "<li>" + 'Remaining time: ' + params.value[3];
+            }
+        },
+        series: [{
+            type: 'scatter',
+            data: shotlist_made,
+            color: "green",
+        },{
+            type: 'scatter',
+            data: shotlist_missed,
+            color: "red",
+        }]
+    };
+    // 使用刚指定的配置项和数据显示图表。
+    shotpointsChat.setOption(option_shotpoints);
 
-      var shotpointsChat = echarts.init(document.getElementById('main'));
 
-      var option_shotpoints = {
-          xAxis: {
-              scale: true
-          },
-          yAxis: {
-              scale: true
-          },
-          tooltip: {
-              formatter: function (params) {
-                  return "<li>" + 'Type: ' + params.value[2] + 
-                          "<li>" + 'Remaining time: ' + params.value[3];
-              }
-          },
-          series: [{
-              type: 'scatter',
-              data: shotlist,
-          }]
-      };
-      // 使用刚指定的配置项和数据显示图表。
-      shotpointsChat .hideLoading();
-      shotpointsChat.setOption(option_shotpoints);
+    // 投篮方式表
+    var typeChart = echarts.init(document.getElementById('type'));
+    var chosen_type = [false, false, false, false, false, false];
+    var color_type_made = ["green","green","green","green","green","green"];
+    var color_type_missed = ["red","red","red","red","red","red"];
+    var x_type_data = ["Jump Shot","Running Jump Shot","Floating Jump Shot","Layup","Running Layup","unknown"];
+    var type_list = [[], [], [], [], [], []];
+    var type_list_made = [[], [], [], [], [], []];
+    var type_list_missed = [[], [], [], [], [], []];
+    var type_list2 = [[], [], [], [], [], []];
+    for (i in shotlist_made) {
+        if (shotlist_made[i][2] == "Jump Shot"){
+            var element = shotlist_made[i];
+            type_list[0].push(element);
+            type_list_made[0].push(element);
+        }
+        if (shotlist_made[i][2] == "Running Jump Shot"){
+            var element = shotlist_made[i];
+            type_list[1].push(element);
+            type_list_made[1].push(element);
+        }
+        if (shotlist_made[i][2] == "Floating Jump Shot"){
+            var element = shotlist_made[i];
+            type_list[2].push(element);
+            type_list_made[2].push(element);
+        }
+        if (shotlist_made[i][2] == "Layup"){
+            var element = shotlist_made[i];
+            type_list[3].push(element);
+            type_list_made[3].push(element);
+        }
+        if (shotlist_made[i][2] == "Running Layup"){
+            var element = shotlist_made[i];
+            type_list[4].push(element);
+            type_list_made[4].push(element);
+        }
+        if (shotlist_made[i][2] == "unknown"){
+            var element = shotlist_made[i];
+            type_list[5].push(element);
+            type_list_made[5].push(element);
+        }
+    }
+    for (i in shotlist_missed) {
+        if (shotlist_missed[i][2] == "Jump Shot"){
+            var element = shotlist_missed[i];
+            type_list[0].push(element);
+            type_list_missed[0].push(element);
+        }
+        if (shotlist_missed[i][2] == "Running Jump Shot"){
+            var element = shotlist_missed[i];
+            type_list[1].push(element);
+            type_list_missed[1].push(element);
+        }
+        if (shotlist_missed[i][2] == "Floating Jump Shot"){
+            var element = shotlist_missed[i];
+            type_list[2].push(element);
+            type_list_missed[2].push(element);
+        }
+        if (shotlist_missed[i][2] == "Layup"){
+            var element = shotlist_missed[i];
+            type_list[3].push(element);
+            type_list_missed[3].push(element);
+        }
+        if (shotlist_missed[i][2] == "Running Layup"){
+            var element = shotlist_missed[i];
+            type_list[4].push(element);
+            type_list_missed[4].push(element);
+        }
+        if (shotlist_missed[i][2] == "unknown"){
+            var element = shotlist_missed[i];
+            type_list[5].push(element);
+            type_list_missed[5].push(element);
+        }
+    }
+    var option_type = {
+        title: {
+            text: 'Shot Type'
+        },
+        tooltip: {},
+        grid: {  
+            left: '10%',  
+            bottom:'35%'  
+        }, 
+        xAxis: {
+            axisLabel: {  
+                interval:0,  
+                rotate:40  
+            }, 
+            data: x_type_data,
+        },
+        yAxis: {
+        },
+        series: [{
+                    name: 'types',
+                    type: 'bar',
+                    stack: '1',
+                    data: [type_list_made[0].length, type_list_made[1].length, type_list_made[2].length,
+                        type_list_made[3].length, type_list_made[4].length, type_list_made[5].length],
+                    itemStyle: {
+                        color: function (params){
+                            var colorList = color_type_made;
+                            return colorList[params.dataIndex];
+                        }
+                    }
+                },
+                {
+                    name: 'types2',
+                    type: 'bar',
+                    stack: '1',
+                    //itemStyle: itemStyle,
+                    data: [type_list_missed[0].length, type_list_missed[1].length, type_list_missed[2].length,
+                    type_list_missed[3].length, type_list_missed[4].length, type_list_missed[5].length],
+                    itemStyle: {
+                        color: function (params){
+                            var colorList = color_type_missed;
+                            return colorList[params.dataIndex];
+                        }
+                    }
+                },
+        ]
+    };
+    typeChart.on('click', function(param) {
+        console.log(param.dataIndex);
+        chosen_type[param.dataIndex] = !chosen_type[param.dataIndex];
+        if (chosen_type[param.dataIndex]){
+            color_type_made[param.dataIndex] = "#FE8463";
+            color_type_missed[param.dataIndex] = "#FE8463";
+        } else {
+            color_type_made[param.dataIndex] = "green";
+            color_type_missed[param.dataIndex] = "red";
 
+        }
+        var allFalse = true;
+        var result_list_made = [];
+        var result_list_missed = [];
+        for (i in chosen_type) {
+            if (chosen_type[i] == true) {
+                    for (j in type_list_made[i]) {
+                        result_list_made.push(type_list_made[i][j]);
+                    }
+                    for (j in type_list_missed[i]) {
+                        result_list_missed.push(type_list_missed[i][j]);
+                    }
+                allFalse = false;
+            }
+        }
+        console.log(chosen_type);
+        console.log(allFalse);
+        if (allFalse) {
+            result_list_made = shotlist_made;
+            result_list_missed = shotlist_missed;
+        }
+        option_shotpoints.series[0].data = result_list_made;
+        option_shotpoints.series[1].data = result_list_missed;
+        typeChart.setOption(option_type);
+        shotpointsChat.setOption(option_shotpoints);
+    });
+    typeChart.setOption(option_type);
 
-      // 投篮方式表
-      var typeChart = echarts.init(document.getElementById('type'));
-      var chosen_type = [false, false, false, false, false, false];
-      var color_type = ["#4ABACE","#4ABACE","#4ABACE","#4ABACE","#4ABACE","#4ABACE"];
-      var x_type_data = ["Jump Shot","Running Jump Shot","Floating Jump Shot","Layup","Running Layup","unknown"];
-      var type_list = [[], [], [], [], [], []];
-      var type_list2 = [[], [], [], [], [], []];
-      for (i in shotlist) {
-          if (shotlist[i][2] == "Jump Shot")
-              type_list[0].push(shotlist[i]);
-          if (shotlist[i][2] == "Running Jump Shot")
-              type_list[1].push(shotlist[i]);
-          if (shotlist[i][2] == "Floating Jump Shot")
-              type_list[2].push(shotlist[i]);
-          if (shotlist[i][2] == "Layup")
-              type_list[3].push(shotlist[i]);
-          if (shotlist[i][2] == "Running Layup")
-              type_list[4].push(shotlist[i]);
-          if (shotlist[i][2] == "unknown")
-              type_list[5].push(shotlist[i]);
-      }
-      var option_type = {
-          title: {
-              text: 'Shot Type'
-          },
-          tooltip: {},
-          grid: {  
-              left: '10%',  
-              bottom:'35%'  
-          }, 
-          xAxis: {
-              axisLabel: {  
-                  interval:0,  
-                  rotate:40  
-              }, 
-              data: x_type_data,
-          },
-          yAxis: {
-          },
-          series: [{
-                      name: 'types',
-                      type: 'bar',
-                      stack: '1',
-                      data: [type_list[0].length, type_list[1].length, type_list[2].length,
-                          type_list[3].length, type_list[4].length, type_list[5].length],
-                      itemStyle: {
-                          color: function (params){
-                              var colorList = color_type;
-                              return colorList[params.dataIndex];
-                          }
-                      }
-                  },
-                  {
-                      name: 'types2',
-                      type: 'bar',
-                      stack: '1',
-                      //itemStyle: itemStyle,
-                      data: [-type_list2[0].length, -type_list2[1].length, -type_list2[2].length,
-                      -type_list2[3].length, -type_list2[4].length, -type_list2[5].length],
-                  },
-          ]
-      };
-      typeChart.on('click', function(param) {
-          console.log(param.dataIndex);
-          chosen_type[param.dataIndex] = !chosen_type[param.dataIndex];
-          if (chosen_type[param.dataIndex])
-              color_type[param.dataIndex] = "#FE8463";
-          else
-              color_type[param.dataIndex] = "#4ABACE";
-          var allFalse = true;
-          var result_list = []
-          for (i in chosen_type) {
-              if (chosen_type[i] == true) {
-                      for (j in type_list[i]) {
-                          result_list.push(type_list[i][j]);
-                      }
-                  allFalse = false;
-              }
-          }
-          console.log(chosen_type);
-          console.log(allFalse);
-          if (allFalse) {
-              result_list = shotlist;
-          }
-          option_shotpoints.series[0].data = result_list;
-          typeChart.setOption(option_type);
-          shotpointsChat.setOption(option_shotpoints);
-      });
-      typeChart.setOption(option_type);
+    
+    // 投篮时间表
+    var timeChart = echarts.init(document.getElementById('time'));
+    var time_AxisData = [];
+    var time_data = [];
+    var time_data_made = [];
+    var time_data_missed = [];
+    for (i = 0; i < 13; i++) {
+        time_AxisData.push(i.toString() + ':00');
+        time_AxisData.push(i.toString() + ':30');
+        time_data.push([]);
+        time_data.push([]);
+        time_data_made.push([]);
+        time_data_made.push([]);
+        time_data_missed.push([]);
+        time_data_missed.push([]);
+    }
+    for (i in shotlist_made) {
+        var num = 0;
+        if (parseInt(shotlist_made[i][3].split(':')[2]) >= 30)
+            num = 1;
+        var e_index = 2*parseInt(shotlist_made[i][3].split(':')[1]) + num;
+        time_data[e_index].push(shotlist_made[i]);
+        time_data_made[e_index].push(shotlist_made[i]);
+    }
+    for (i in shotlist_missed) {
+        var num = 0;
+        if (parseInt(shotlist_missed[i][3].split(':')[2]) >= 30)
+            num = 1;
+        var e_index = 2*parseInt(shotlist_missed[i][3].split(':')[1]) + num;
+        time_data[e_index].push(shotlist_missed[i]);
+        time_data_missed[e_index].push(shotlist_missed[i]);
+    }
+    time_num_data = [];
+    for (i in time_data) {
+        time_num_data.push(time_data[i].length);
+    }
+    console.log(time_data);
+    option_time = {
+        title: {
+            text: 'Remaining Time'
+        },
+        tooltip: {},
+        brush: {
+            toolbox: ['lineX', 'clear'],
+            xAxisIndex: 0
+        },
+        xAxis: {
+            data: time_AxisData,
+            silent: false,
+            splitLine: {
+                show: false
+            }
+        },
+        yAxis: {},
+        series: [{
+            name: 'bar',
+            type: 'bar',
+            data: time_num_data,
+            animationDelay: function (idx) {
+                return idx * 10;
+            }
+        }],
+        animationEasing: 'elasticOut',
+        animationDelayUpdate: function (idx) {
+            return idx * 5;
+        }
+    };
 
-      
-      // 投篮时间表
-      var timeChart = echarts.init(document.getElementById('time'));
-      var time_AxisData = [];
-      var time_data = [];
-      for (i = 0; i < 13; i++) {
-          time_AxisData.push(i.toString() + ':00');
-          time_AxisData.push(i.toString() + ':30');
-          time_data.push([]);
-          time_data.push([]);
-      }
-      for (i in shotlist) {
-          var num = 0;
-          if (parseInt(shotlist[i][3].split(':')[2]) >= 30)
-              num = 1;
-          var e_index = 2*parseInt(shotlist[i][3].split(':')[1]) + num;
-          time_data[e_index].push(shotlist[i]);
-      }
-      time_num_data = [];
-      for (i in time_data) {
-          time_num_data.push(time_data[i].length);
-      }
-      console.log(time_data);
-      option_time = {
-          title: {
-              text: 'Remaining Time'
-          },
-          tooltip: {},
-          brush: {
-              toolbox: ['lineX', 'clear'],
-              xAxisIndex: 0
-          },
-          xAxis: {
-              data: time_AxisData,
-              silent: false,
-              splitLine: {
-                  show: false
-              }
-          },
-          yAxis: {},
-          series: [{
-              name: 'bar',
-              type: 'bar',
-              data: time_num_data,
-              animationDelay: function (idx) {
-                  return idx * 10;
-              }
-          }],
-          animationEasing: 'elasticOut',
-          animationDelayUpdate: function (idx) {
-              return idx * 5;
-          }
-      };
+    timeChart.on('brushSelected', function(param) {
+        var brushed = [];
+        var brushComponent = param.batch[0];
+        var rawIndices = brushComponent.selected[0].dataIndex;
+        var result_list_made = [];
+        var result_list_missed = [];
+        for (i in rawIndices) {
+            for (j in time_data[rawIndices[i]]) {
+                result_list_made.push(time_data_made[rawIndices[i]][j]);
+                result_list_missed.push(time_data_missed[rawIndices[i]][j]);
+            }
+        }
+        console.log(rawIndices.length == 0)
+        if (rawIndices.length == 0) {
+            result_list_made = shotlist_made;
+            result_list_missed = shotlist_missed;
+            option_type.series[0].data = [type_list_made[0].length, type_list_made[1].length, type_list_made[2].length,
+                                          type_list_made[3].length, type_list_made[4].length, type_list_made[5].length];
+            option_type.series[1].data = [type_list_missed[0].length, type_list_missed[1].length, type_list_missed[2].length,
+                                          type_list_missed[3].length, type_list_missed[4].length, type_list_missed[5].length];
+        }
+        option_shotpoints.series[0].data = result_list_made;
+        option_shotpoints.series[1].data = result_list_missed;
+        shotpointsChat.setOption(option_shotpoints);
+        typeChart.setOption(option_type);
 
-      timeChart.on('brushSelected', function(param) {
-          var brushed = [];
-          var brushComponent = param.batch[0];
-          var rawIndices = brushComponent.selected[0].dataIndex;
-          var result_list = []
-          for (i in rawIndices) {
-              for (j in time_data[rawIndices[i]]) {
-                  result_list.push(time_data[rawIndices[i]][j]);
-              }
-          }
-          if (rawIndices.length == 0) {
-              result_list = shotlist;
-          }
-          option_shotpoints.series[0].data = result_list;
-          shotpointsChat.setOption(option_shotpoints);
+        if (rawIndices.length != 0) {
+            var type_list2_num_made = [];
+            for (i in type_list_made) {
+                var sum_num = 0;
+                for (j in type_list_made[i]) {
+                    var num = 0;
+                    if (parseInt(type_list_made[i][j][3].split(':')[2]) >= 30)
+                        num = 1;
+                    var e_index = 2*parseInt(type_list_made[i][j][3].split(':')[1]) + num;
+                    if (e_index in rawIndices)
+                        sum_num ++;
+                }
+                type_list2_num_made.push(sum_num);
+            }
+            option_type.series[0].data = type_list2_num_made;
+            
+            var type_list2_num_missed = [];
+            for (i in type_list_missed) {
+                var sum_num = 0;
+                for (j in type_list_missed[i]) {
+                    var num = 0;
+                    if (parseInt(type_list_missed[i][j][3].split(':')[2]) >= 30)
+                        num = 1;
+                    var e_index = 2*parseInt(type_list_missed[i][j][3].split(':')[1]) + num;
+                    if (e_index in rawIndices)
+                        sum_num ++;
+                }
+                type_list2_num_missed.push(sum_num);
+            }
+            option_type.series[1].data = type_list2_num_missed;
+            typeChart.setOption(option_type);
+        }
+    });
+    timeChart.setOption(option_time);
 
-          var type_list2_num = [];
-          for (i in type_list) {
-              var sum_num = 0;
-              for (j in type_list[i]) {
-                  var num = 0;
-                  if (parseInt(type_list[i][j][3].split(':')[2]) >= 30)
-                      num = 1;
-                  var e_index = 2*parseInt(type_list[i][j][3].split(':')[1]) + num;
-                  if (e_index in rawIndices)
-                      sum_num ++;
-              }
-              type_list2_num.push(-sum_num);
-          }
-          option_type.series[1].data = type_list2_num;
-          typeChart.setOption(option_type);
-      });
-      timeChart.setOption(option_time);
-
-  }, function(err) {
-      console.log(err.message);
-  });
+}, function(err) {
+    console.log(err.message);
+});
