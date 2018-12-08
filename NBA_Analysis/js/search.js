@@ -105,12 +105,14 @@ $(function () {
 
 function goTo(){
     var inputVal = document.getElementById("search_text").value;
-    
+    var find = false;
+
     for (i in player_list) {
         if (player_list[i] == inputVal) {
             var url = "playerInfo.html?name="+inputVal;
             url=encodeURI(url);
             location.href = url;
+            find = true;
         }
     }
 
@@ -119,7 +121,12 @@ function goTo(){
             var url = "teamInfo.html?name="+inputVal;
             url=encodeURI(url);
             location.href = url;
+            find = true;
         }
+    }
+
+    if (find == false) {
+        alert('No such player or team!')
     }
 }
 
