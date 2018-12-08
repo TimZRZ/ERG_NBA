@@ -98,6 +98,7 @@ AV.Cloud.run('player_xy', paramsJson).then(function(data) {
             shotlist_missed.push(element);
         }
     }
+    
     var shotpointsChat = echarts.init(document.getElementById('main'));
     var option_shotpoints = {
         xAxis: {
@@ -135,73 +136,39 @@ AV.Cloud.run('player_xy', paramsJson).then(function(data) {
     var chosen_type = [false, false, false, false, false, false];
     var color_type_made = ["green","green","green","green","green","green"];
     var color_type_missed = ["red","red","red","red","red","red"];
-    var x_type_data = ["Jump Shot","Running Jump Shot","Floating Jump Shot","Layup","Running Layup","unknown"];
+    var x_type_data = ["Jump Shot","Step Back Jump Shot","Pullup Jump Shot","Layup","Running Layup","unknown"];
     var type_list = [[], [], [], [], [], []];
     var type_list_made = [[], [], [], [], [], []];
     var type_list_missed = [[], [], [], [], [], []];
     var type_list2 = [[], [], [], [], [], []];
     for (i in shotlist_made) {
         if (shotlist_made[i][2] == "Jump Shot"){
-            var element = shotlist_made[i];
-            type_list[0].push(element);
-            type_list_made[0].push(element);
-        }
-        if (shotlist_made[i][2] == "Running Jump Shot"){
-            var element = shotlist_made[i];
-            type_list[1].push(element);
-            type_list_made[1].push(element);
-        }
-        if (shotlist_made[i][2] == "Floating Jump Shot"){
-            var element = shotlist_made[i];
-            type_list[2].push(element);
-            type_list_made[2].push(element);
-        }
-        if (shotlist_made[i][2] == "Layup"){
-            var element = shotlist_made[i];
-            type_list[3].push(element);
-            type_list_made[3].push(element);
-        }
-        if (shotlist_made[i][2] == "Running Layup"){
-            var element = shotlist_made[i];
-            type_list[4].push(element);
-            type_list_made[4].push(element);
-        }
-        if (shotlist_made[i][2] == "unknown"){
-            var element = shotlist_made[i];
-            type_list[5].push(element);
-            type_list_made[5].push(element);
+            type_list_made[0].push(shotlist_made[i]);
+        } else if (shotlist_made[i][2] == "Step Back Jump Shot"){
+            type_list_made[1].push(shotlist_made[i]);
+        } else if (shotlist_made[i][2] == "Pullup Jump Shot"){
+            type_list_made[2].push(shotlist_made[i]);
+        } else if (shotlist_made[i][2] == "Layup"){
+            type_list_made[3].push(shotlist_made[i]);
+        } else if (shotlist_made[i][2] == "Running Layup"){
+            type_list_made[4].push(shotlist_made[i]);
+        } else {
+            type_list_made[5].push(shotlist_made[i]);
         }
     }
     for (i in shotlist_missed) {
         if (shotlist_missed[i][2] == "Jump Shot"){
-            var element = shotlist_missed[i];
-            type_list[0].push(element);
-            type_list_missed[0].push(element);
-        }
-        if (shotlist_missed[i][2] == "Running Jump Shot"){
-            var element = shotlist_missed[i];
-            type_list[1].push(element);
-            type_list_missed[1].push(element);
-        }
-        if (shotlist_missed[i][2] == "Floating Jump Shot"){
-            var element = shotlist_missed[i];
-            type_list[2].push(element);
-            type_list_missed[2].push(element);
-        }
-        if (shotlist_missed[i][2] == "Layup"){
-            var element = shotlist_missed[i];
-            type_list[3].push(element);
-            type_list_missed[3].push(element);
-        }
-        if (shotlist_missed[i][2] == "Running Layup"){
-            var element = shotlist_missed[i];
-            type_list[4].push(element);
-            type_list_missed[4].push(element);
-        }
-        if (shotlist_missed[i][2] == "unknown"){
-            var element = shotlist_missed[i];
-            type_list[5].push(element);
-            type_list_missed[5].push(element);
+            type_list_missed[0].push(shotlist_missed[i]);
+        } else if (shotlist_missed[i][2] == "Step Back Jump Shot"){
+            type_list_missed[1].push(shotlist_missed[i]);
+        } else if (shotlist_missed[i][2] == "Pullup Jump Shot"){
+            type_list_missed[2].push(shotlist_missed[i]);
+        } else if (shotlist_missed[i][2] == "Layup"){
+            type_list_missed[3].push(shotlist_missed[i]);
+        } else if (shotlist_missed[i][2] == "Running Layup"){
+            type_list_missed[4].push(shotlist_missed[i]);
+        } else {
+            type_list_missed[5].push(shotlist_missed[i]);
         }
     }
     var option_type = {
@@ -385,6 +352,7 @@ AV.Cloud.run('player_xy', paramsJson).then(function(data) {
         typeChart.setOption(option_type);
 
         if (rawIndices.length != 0) {
+            console.log(rawIndices);
             var type_list2_num_made = [];
             for (i in type_list_made) {
                 var sum_num = 0;
@@ -393,9 +361,11 @@ AV.Cloud.run('player_xy', paramsJson).then(function(data) {
                     if (parseInt(type_list_made[i][j][3].split(':')[2]) >= 30)
                         num = 1;
                     var e_index = 2*parseInt(type_list_made[i][j][3].split(':')[1]) + num;
-                    if (e_index in rawIndices)
-                        sum_num ++;
+                    for (k in rawIndices) {
+                        if (e_index == rawIndices[k]) sum_num ++;
+                    }
                 }
+                console.log(i + "|" +sum_num )
                 type_list2_num_made.push(sum_num);
             }
             option_type.series[0].data = type_list2_num_made;
@@ -408,8 +378,9 @@ AV.Cloud.run('player_xy', paramsJson).then(function(data) {
                     if (parseInt(type_list_missed[i][j][3].split(':')[2]) >= 30)
                         num = 1;
                     var e_index = 2*parseInt(type_list_missed[i][j][3].split(':')[1]) + num;
-                    if (e_index in rawIndices)
-                        sum_num ++;
+                    for (k in rawIndices) {
+                        if (e_index == rawIndices[k]) sum_num ++;
+                    }
                 }
                 type_list2_num_missed.push(sum_num);
             }
