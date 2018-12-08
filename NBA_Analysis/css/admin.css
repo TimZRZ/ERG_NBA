@@ -283,3 +283,32 @@ button{
   display: flex;
   text-align: center;
 }
+
+.table_player table {
+  margin:50px auto;
+  width:100%;
+  border:0;
+}
+.table_player th {
+  background-color:#93DAFF;
+  color:#000000
+}
+.table_player,.table_player th,.table_player td {
+  font-size:0.95em;
+  text-align:center;
+  padding:4px;
+  border-collapse:collapse;
+}
+.table_player th,.table_player td {
+  border: 1px solid #6fcdfe;
+  border-width:1px 0 1px 0
+}
+.table_player tr {
+  border: 1px solid #ffffff;
+}
+.table_player tr:nth-child(odd){
+  background-color:#dbf2fe;
+}
+.table_player tr:nth-child(even){
+  background-color:#ffffff;
+}

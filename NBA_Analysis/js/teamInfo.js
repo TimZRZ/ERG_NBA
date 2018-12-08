@@ -15,15 +15,6 @@ query_name.find().then(function(todo){
   var team_win_rate = todo[0].get('W_L');
   var team_playoff = todo[0].get('Plyfs');
   var team_champion = todo[0].get('Champ');
-  //同步球队照片
-  var query_photo = new AV.Query('Team_Image');
-  query_photo.equalTo('Tm', team_abbr);
-  query_photo.find().then(function(todo){
-    var team_logo = todo[0].get('url');
-    document.getElementById('team_logo').src = team_logo;
-  });
-
-  
   //同步球队前四项
   document.getElementById("team_name").innerHTML= team_name;
   document.getElementById("team_conference").innerHTML=team_conference;
@@ -35,5 +26,22 @@ query_name.find().then(function(todo){
   document.getElementById("team_playoff").innerHTML=team_playoff;
   document.getElementById("team_champion").innerHTML=team_champion;
 
+  //同步球队照片
+  var query_photo = new AV.Query('Team_Image');
+  query_photo.equalTo('Tm', team_abbr);
+  query_photo.find().then(function(todo){
+    var team_logo = todo[0].get('url');
+    document.getElementById('team_logo').src = team_logo;
   });
+
+  //同步球员信息
+  var query_player = new AV.Query('Player_Team');
+  query_player.euqalTo('Team', team_abbr);
+  query_player.find().then(function(todo){
+    alert(todo[0]);
+  })
+
+  
+
+});
 
