@@ -135,6 +135,7 @@ button{
 	font-size:13px;
 	color:#F9F0DA;
 }
+
 .team_logo{
   width:25px;
   height:25px;
@@ -153,6 +154,9 @@ button{
 }
 .player-summary_image{
   float: left;
+  margin-right: 20px;
+  width: 260px;
+  height: 190px;
 }
 .player-summary_info{
   margin-top: 50px;
@@ -210,11 +214,6 @@ button{
   border-color:gray;
 }
 
-.player-summary_image{
-  width: 260px;
-  height: 190px;
-}
-
 .player-state-1{
   font-size: 12px;
   margin-left: 8px;
@@ -254,15 +253,17 @@ button{
 
 
 .team-summary_image{
-  margin-top:20px;
-  margin-left:5px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  margin-left: 15px;
+  margin-right: 25px;
   float:left;
-  width:120px;
-  height:120px;
+  width:175px;
+  height:175px;
 }
 
 .team-summary_info{
-  margin-top:5%;
+  margin-top:6%;
   height:100px;
 }
 
@@ -283,6 +284,7 @@ button{
   display: flex;
   text-align: center;
 }
+<<<<<<< HEAD
 
 .table_player table {
   margin:50px auto;
@@ -312,3 +314,5 @@ button{
 .table_player tr:nth-child(even){
   background-color:#ffffff;
 }
+=======
+>>>>>>> 6c1a742ceb46a7b552c617d3a00aac0bcda2462b
