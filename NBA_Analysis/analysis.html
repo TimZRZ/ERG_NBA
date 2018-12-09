@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>NBA Analysis</title>
+    <script src="https://cdn.jsdelivr.net/npm/leancloud-storage@3.11.0/dist/av-min.js"></script>
+    <script src="js/initLeanCloud.js"></script>
+    <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+    <script src="js/jquery.SuperSlide.2.1.1.js"></script>
+    <script src="js/search.js"></script>
+    <!-- Bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+    <!-- Bulma Version 0.7.2-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/admin.css">
+    <link href="css/analysis.css" rel="stylesheet" type="text/css">
+
+
+</head>
+
+<body>
+
+    <!-- START NAV -->
+    <nav class="navbar is-white">
+        <div class="container">
+            <div class="navbar-brand">
+                <a class="navbar-item brand-text" href="admin.html">Home</a>
+                <div class="navbar-burger burger" data-target="navMenu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <div id="navMenu" class="navbar-menu">
+                <div class="navbar-start">
+                    <a class="navbar-item" href="analysis.html">Analysis</a>
+                    <a class="navbar-item" href="about.html">About Us</a>
+                <div class="search bar6 navbar-item">
+                    <form>
+                        <input type="text" id="search_text" autocomplete="off" placeholder="请输入球星或球队名" />
+                        <button id="search" type="submit" onclick="goTo()"> </button>
+                        <div id="auto_div"> </div>
+                    </form>
+                </div>
+                </div>
+
+            </div>
+        </div>
+    </nav>
+    <!-- END NAV -->
+    <div>
+        <h1 >Clusterring</h1>
+        <div class="banner-box">
+            <div class="bd">
+                <ul>          	    
+                    <li>
+                        <div class="m-width">
+                        <a href="javascript:void(0);"><img src="images/analysis/kmeans_lda.jpg" /></a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="m-width">
+                        <a href="javascript:void(0);"><img src="images/analysis/kmeans_pca.jpg" /></a>
+                        </div>
+                    </li>
+                    
+                </ul>
+            </div>
+            <div class="banner-btn">
+                <a class="prev" href="javascript:void(0);"></a>
+                <a class="next" href="javascript:void(0);"></a>
+                <div class="hd"><ul></ul></div>
+            </div>
+        </div>
+        <h1 >Regression</h1>
+        <div class="banner-box">
+            <div class="bd">
+                <ul>          	    
+                    <li>
+                        <div class="m-width">
+                        <a href="javascript:void(0);"><img src="images/analysis/gsw_cle.png" /></a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="m-width">
+                        <a href="javascript:void(0);"><img src="images/analysis/gsw_hou.png" /></a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="m-width">
+                        <a href="javascript:void(0);"><img src="images/analysis/941544331632_.pic.jpg" /></a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="m-width">
+                        <a href="javascript:void(0);"><img src="images/analysis/cle_bos.png" /></a>
+                        </div>
+                    </li>  
+                </ul>
+            </div>
+            <div class="banner-btn">
+                <a class="prev" href="javascript:void(0);"></a>
+                <a class="next" href="javascript:void(0);"></a>
+                <div class="hd"><ul></ul></div>
+            </div>
+        </div>
+            
+        <script type="text/javascript">
+        $(document).ready(function(){
+        
+            $(".prev,.next").hover(function(){
+                $(this).stop(true,false).fadeTo("show",0.9);
+            },function(){
+                $(this).stop(true,false).fadeTo("show",0.4);
+            });
+            
+            $(".banner-box").slide({
+                titCell:".hd ul",
+                mainCell:".bd ul",
+                effect:"fold",
+                interTime:3500,
+                delayTime:500,
+                autoPlay:true,
+                autoPage:true, 
+                trigger:"click" 
+            });
+        
+        });
+        </script>
+        
+    </div>
+</body>
+
+</html>

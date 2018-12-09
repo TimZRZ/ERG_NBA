@@ -13,7 +13,7 @@ a:link{
   color:white;
 }
 nav.navbar {
-  border-top: 4px solid #276cda;
+
   margin-bottom: 1rem;
 }
 .navbar-item.brand-text {
@@ -292,4 +292,21 @@ button{
 }
 .table_player tr:nth-child(even){
   background-color:#ffffff;
+}
+
+h1{
+  font-size:150%;
+  margin-top:10px;
+  margin-bottom: 20px;
+  color:black;
+}
+
+h2{
+  margin-left:20px;
+  margin-bottom:5px;
+  font-weight: bold;
+}
+.about, p{
+  margin-left:50px;
+
 }
