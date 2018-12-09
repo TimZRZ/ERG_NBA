@@ -5,6 +5,13 @@ html, body {
   height: 100%;
   background: #ECF0F3;
 }
+.bodies{
+  color:white;
+  height: 100%;
+}
+a:link{
+  color:white;
+}
 nav.navbar {
   border-top: 4px solid #276cda;
   margin-bottom: 1rem;
@@ -13,12 +20,16 @@ nav.navbar {
   font-weight: bolder
 }
 .navbar-item, .navbar-link {
+  color:white;
   font-size: 14px;
   font-weight: 500;
 }
 .columns {
-  width: 100%;
+  background-size: cover;
+  width:100%;
   height: 100%;
+  padding-left: 10%;
+  background-image:url(../images/bg0.png);
 }
 .menu-label {
   color: #8F99A3;
@@ -39,41 +50,8 @@ nav.navbar {
   color: #276cda;
   font-weight: 700;
 }
-.card {
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.18);
-  margin-bottom: 2rem;
-}
-.card-header-title {
-  color: #8F99A3;
-  font-weight: 400;
-}
-.info-tiles {
-  margin: 1rem 0;
-}
-.info-tiles .subtitle {
-  font-weight: 300;
-  color: #8F99A3;
-}
-.hero.welcome.is-info {
-  background: #36D1DC;
-  background: -webkit-linear-gradient(to right, #5B86E5, #36D1DC);
-  background: linear-gradient(to right, #5B86E5, #36D1DC);
-}
-.hero.welcome .title, .hero.welcome .subtitle {
-  color: hsl(192, 17%, 99%);
-}
-.card .content {
-  font-size: 14px;
-}
-.card-footer-item {
-  font-size: 14px;
-  font-weight: 700;
-  color: #8F99A3;
-}
 
-.card-table .table {
-  margin-bottom: 0;
-}
+
 .events-card .card-table {
   max-height: 250px;
   overflow-y: scroll;
@@ -84,12 +62,12 @@ nav.navbar {
 }
 .landing{
   float:left;
-  width:300px;
+  width:230px;
   margin:10px;
 }
 
 div.search{
-  padding:10px 300px;
+  padding:10px 500px;
 }
 
 form{
@@ -114,6 +92,7 @@ button{
   width:42px;
   cursor:pointer;
   position:absolute;
+  margin-right: 0px;
 }
 
 .bar6 input {
@@ -128,7 +107,8 @@ button{
 	border-radius:0 5px 5px 0;
 	width:60px;
 	top:0;
-	right:0;
+  right:0;
+
 }
 .bar6 button:before {
 	content:"搜索";
@@ -284,7 +264,6 @@ button{
   display: flex;
   text-align: center;
 }
-<<<<<<< HEAD
 
 .table_player table {
   margin:50px auto;
@@ -314,5 +293,3 @@ button{
 .table_player tr:nth-child(even){
   background-color:#ffffff;
 }
-=======
->>>>>>> 6c1a742ceb46a7b552c617d3a00aac0bcda2462b

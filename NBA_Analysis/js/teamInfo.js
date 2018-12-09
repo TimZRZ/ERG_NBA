@@ -26,7 +26,6 @@ query_name.find().then(function(todo){
   document.getElementById("team_playoff").innerHTML=team_playoff;
   document.getElementById("team_champion").innerHTML=team_champion;
 
-<<<<<<< HEAD
   //同步球队照片
   var query_photo = new AV.Query('Team_Image');
   query_photo.equalTo('Tm', team_abbr);
@@ -46,6 +45,3 @@ query_name.find().then(function(todo){
 
 });
 
-=======
-  });
->>>>>>> 6c1a742ceb46a7b552c617d3a00aac0bcda2462b
