@@ -9,11 +9,8 @@ html, body {
   color:white;
   height: 100%;
 }
-a:link{
-  color:white;
-}
-nav.navbar {
 
+nav.navbar {
   margin-bottom: 1rem;
 }
 .navbar-item.brand-text {
@@ -25,7 +22,7 @@ nav.navbar {
   font-weight: 500;
 }
 .columns {
-  background-size: cover;
+  background-size: 100% 100%;
   width:100%;
   height: 100%;
   padding-left: 10%;
@@ -62,7 +59,7 @@ nav.navbar {
 }
 .landing{
   float:left;
-  width:230px;
+  width:300px;
   margin:10px;
 }
 
@@ -261,18 +258,20 @@ button{
 }
 
 .stats_team_link{
+  color: white;
   display: flex;
   text-align: center;
 }
 
 .table_player table {
-  margin:50px auto;
+  margin:30px auto;
   width:100%;
   border:0;
 }
 .table_player th {
-  background-color:#93DAFF;
-  color:#000000
+  background-color:#032f4f;
+  color:white;
+  font-size: 15px;
 }
 .table_player,.table_player th,.table_player td {
   font-size:0.95em;
@@ -285,13 +284,15 @@ button{
   border-width:1px 0 1px 0
 }
 .table_player tr {
-  border: 1px solid #ffffff;
+  border: 1px solid #032f4f;
 }
 .table_player tr:nth-child(odd){
-  background-color:#dbf2fe;
+  background-color:#032f4f;
+  color:white;
 }
 .table_player tr:nth-child(even){
-  background-color:#ffffff;
+  background-color:#032f4f;
+  color:white;
 }
 
 h1{
@@ -302,11 +303,18 @@ h1{
 }
 
 h2{
-  margin-left:20px;
   margin-bottom:5px;
   font-weight: bold;
 }
-.about, p{
+.about{
   margin-left:50px;
 
+}
+
+.team_player{
+  color:antiquewhite;
+}
+
+.team_player:hover{
+  color:white;
 }

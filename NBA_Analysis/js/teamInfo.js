@@ -3,6 +3,7 @@ var argsIndex = url.split("?name=");
 var arg = argsIndex[1];
 var name = arg.split("%20")[0];
 var name = name.split(",")[0];
+var player_table = "";
 var query_name = new AV.Query('Team');
 query_name.equalTo('Franchise',name);
 query_name.find().then(function(todo){
@@ -35,13 +36,32 @@ query_name.find().then(function(todo){
   });
 
   //同步球员信息
-  var query_player = new AV.Query('Player_Team');
-  query_player.euqalTo('Team', team_abbr);
-  query_player.find().then(function(todo){
-    alert(todo[0]);
-  })
+  player_table += "<table>";
+  player_table += "<tr>"
+      + "<th>Name</th>"
+      + "<th>Number</th>"
+      + "<th>Position</th>"
+      + "<th>Height</th>"
+      + "<th>Weight</th>"
+      + "</tr>";
+  var palyer_team = new AV.Query("Player_Team");
+  palyer_team.equalTo('Team', team_abbr);
+  palyer_team.descending('No_');
+  palyer_team.find().then(function(todo){
+    for (i in todo) {
+      var name = todo[i].get('Player');
+      var url = "./playerInfo.html?name=" + name;
+      url=encodeURI(url);
+      player_table += "<tr>";
+      player_table += "<td>" + "<a " + "href=" + url + " class=team_player>" + name + "</a>" + "</td>";
+      player_table += "<td>" + todo[i].get('No_') + "</td>";
+      player_table += "<td>" + todo[i].get('Pos') + "</td>";
+      player_table += "<td>" + todo[i].get('Ht') + "</td>";
+      player_table += "<td>" + todo[i].get('Wt') + "</td>";
 
-  
-
+      player_table += "</tr>";
+      document.getElementById("table_player").innerHTML = player_table;
+    }
+  });
 });
 

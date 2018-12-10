@@ -80,6 +80,33 @@ AV.Cloud.run('top_five', paramsJson).then(function(data){
 })
 
 var paramsJson = {
+    attr: 'avg_block'
+};
+AV.Cloud.run('top_five', paramsJson).then(function(data){
+    document.getElementById("1bk").innerHTML = '1. '+ data[0]['Name'];
+    document.getElementById("2bk").innerHTML = '2. '+ data[1]['Name'];
+    document.getElementById("3bk").innerHTML = '3. '+ data[2]['Name'];
+    document.getElementById("4bk").innerHTML = '4. '+ data[3]['Name'];
+    document.getElementById("5bk").innerHTML = '5. '+ data[4]['Name'];
+
+    var url1 = "playerInfo.html?name="+data[0]['Name'];;
+    url1=encodeURI(url1);
+    document.getElementById("1bk").href = url1;
+    var url2 = "playerInfo.html?name="+data[1]['Name'];;
+    url2=encodeURI(url2);
+    document.getElementById("2bk").href = url2;
+    var url3 = "playerInfo.html?name="+data[2]['Name'];;
+    url3=encodeURI(url3);
+    document.getElementById("3bk").href = url3;
+    var url4 = "playerInfo.html?name="+data[3]['Name'];;
+    url4=encodeURI(url4);
+    document.getElementById("4bk").href = url4;
+    var url5 = "playerInfo.html?name="+data[4]['Name'];;
+    url5=encodeURI(url5);
+    document.getElementById("5bk").href = url5;
+})
+
+var paramsJson = {
     attr: 'avg_steal'
 };
 AV.Cloud.run('top_five', paramsJson).then(function(data){
