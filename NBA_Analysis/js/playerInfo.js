@@ -120,7 +120,7 @@ AV.Cloud.run('player_xy', paramsJson).then(function(data) {
         series: [{
             type: 'scatter',
             data: shotlist_made,
-            color: "green",
+            color: "DodgerBlue",
         },{
             type: 'scatter',
             data: shotlist_missed,
@@ -133,14 +133,15 @@ AV.Cloud.run('player_xy', paramsJson).then(function(data) {
 
     // 投篮方式表
     var typeChart = echarts.init(document.getElementById('type'));
-    var chosen_type = [false, false, false, false, false, false];
-    var color_type_made = ["green","green","green","green","green","green"];
-    var color_type_missed = ["red","red","red","red","red","red"];
-    var x_type_data = ["Jump Shot","Step Back Jump Shot","Pullup Jump Shot","Layup","Running Layup","unknown"];
-    var type_list = [[], [], [], [], [], []];
-    var type_list_made = [[], [], [], [], [], []];
-    var type_list_missed = [[], [], [], [], [], []];
-    var type_list2 = [[], [], [], [], [], []];
+    var chosen_type = [false, false, false, false, false, false, false, false, false, false, false, false];
+    var color_type_made = ["DodgerBlue","DodgerBlue","DodgerBlue","DodgerBlue","DodgerBlue","DodgerBlue","DodgerBlue","DodgerBlue","DodgerBlue","DodgerBlue","DodgerBlue","DodgerBlue"];
+    var color_type_missed = ["red","red","red","red","red","red","red","red","red","red","red","red"];
+    var x_type_data = ["Jump Shot","Step Back Jump Shot","Pullup Jump Shot","Layup","Running Layup", "Alley Oop Dunk",
+                        "Putback Layup", "Driving Finger Roll Layup", "Hook Shot", "Dunk", "Fadeaway Jumper", "unknown"];
+    var type_list = [[], [], [], [], [], [], [], [], [], [], [], []];
+    var type_list_made = [[], [], [], [], [], [], [], [], [], [], [], []];
+    var type_list_missed = [[], [], [], [], [], [], [], [], [], [], [], []];
+    var type_list2 = [[], [], [], [], [], [], [], [], [], [], [], []];
     for (i in shotlist_made) {
         if (shotlist_made[i][2] == "Jump Shot"){
             type_list_made[0].push(shotlist_made[i]);
@@ -152,8 +153,20 @@ AV.Cloud.run('player_xy', paramsJson).then(function(data) {
             type_list_made[3].push(shotlist_made[i]);
         } else if (shotlist_made[i][2] == "Running Layup"){
             type_list_made[4].push(shotlist_made[i]);
-        } else {
+        } else if (shotlist_made[i][2] == "Alley Oop Dunk"){
             type_list_made[5].push(shotlist_made[i]);
+        } else if (shotlist_made[i][2] == "Putback Layup"){
+            type_list_made[6].push(shotlist_made[i]);
+        } else if (shotlist_made[i][2] == "Driving Finger Roll Layup"){
+            type_list_made[7].push(shotlist_made[i]);
+        } else if (shotlist_made[i][2] == "Hook Shot"){
+            type_list_made[8].push(shotlist_made[i]);
+        } else if (shotlist_made[i][2] == "Dunk"){
+            type_list_made[9].push(shotlist_made[i]);
+        } else if (shotlist_made[i][2] == "Fadeaway Jumper"){
+            type_list_made[10].push(shotlist_made[i]);
+        } else {
+            type_list_made[11].push(shotlist_made[i]);
         }
     }
     for (i in shotlist_missed) {
@@ -167,8 +180,20 @@ AV.Cloud.run('player_xy', paramsJson).then(function(data) {
             type_list_missed[3].push(shotlist_missed[i]);
         } else if (shotlist_missed[i][2] == "Running Layup"){
             type_list_missed[4].push(shotlist_missed[i]);
-        } else {
+        } else if (shotlist_missed[i][2] == "Alley Oop Dunk"){
             type_list_missed[5].push(shotlist_missed[i]);
+        } else if (shotlist_missed[i][2] == "Putback Layup"){
+            type_list_missed[6].push(shotlist_missed[i]);
+        } else if (shotlist_missed[i][2] == "Driving Finger Roll Layup"){
+            type_list_missed[7].push(shotlist_missed[i]);
+        } else if (shotlist_missed[i][2] == "Hook Shot"){
+            type_list_missed[8].push(shotlist_missed[i]);
+        } else if (shotlist_missed[i][2] == "Dunk"){
+            type_list_missed[9].push(shotlist_missed[i]);
+        } else if (shotlist_missed[i][2] == "Fadeaway Jumper"){
+            type_list_missed[10].push(shotlist_missed[i]);
+        } else {
+            type_list_missed[11].push(shotlist_missed[i]);
         }
     }
     var option_type = {
@@ -193,8 +218,8 @@ AV.Cloud.run('player_xy', paramsJson).then(function(data) {
                     name: 'types',
                     type: 'bar',
                     stack: '1',
-                    data: [type_list_made[0].length, type_list_made[1].length, type_list_made[2].length,
-                        type_list_made[3].length, type_list_made[4].length, type_list_made[5].length],
+                    data: [type_list_made[0].length, type_list_made[1].length, type_list_made[2].length, type_list_made[3].length, type_list_made[4].length,
+                    type_list_made[5].length, type_list_made[6].length, type_list_made[7].length, type_list_made[8].length, type_list_made[9].length, type_list_made[10].length, type_list_made[11].length],
                     itemStyle: {
                         color: function (params){
                             var colorList = color_type_made;
@@ -207,8 +232,8 @@ AV.Cloud.run('player_xy', paramsJson).then(function(data) {
                     type: 'bar',
                     stack: '1',
                     //itemStyle: itemStyle,
-                    data: [type_list_missed[0].length, type_list_missed[1].length, type_list_missed[2].length,
-                    type_list_missed[3].length, type_list_missed[4].length, type_list_missed[5].length],
+                    data: [type_list_missed[0].length, type_list_missed[1].length, type_list_missed[2].length, type_list_missed[3].length, type_list_missed[4].length,
+                    type_list_missed[5].length, type_list_missed[6].length, type_list_missed[7].length, type_list_missed[8].length, type_list_missed[9].length, type_list_missed[10].length, type_list_missed[11].length],
                     itemStyle: {
                         color: function (params){
                             var colorList = color_type_missed;
@@ -225,7 +250,7 @@ AV.Cloud.run('player_xy', paramsJson).then(function(data) {
             color_type_made[param.dataIndex] = "#FE8463";
             color_type_missed[param.dataIndex] = "#FE8463";
         } else {
-            color_type_made[param.dataIndex] = "green";
+            color_type_made[param.dataIndex] = "DodgerBlue";
             color_type_missed[param.dataIndex] = "red";
 
         }
@@ -341,10 +366,12 @@ AV.Cloud.run('player_xy', paramsJson).then(function(data) {
         if (rawIndices.length == 0) {
             result_list_made = shotlist_made;
             result_list_missed = shotlist_missed;
-            option_type.series[0].data = [type_list_made[0].length, type_list_made[1].length, type_list_made[2].length,
-                                          type_list_made[3].length, type_list_made[4].length, type_list_made[5].length];
-            option_type.series[1].data = [type_list_missed[0].length, type_list_missed[1].length, type_list_missed[2].length,
-                                          type_list_missed[3].length, type_list_missed[4].length, type_list_missed[5].length];
+            option_type.series[0].data = [type_list_made[0].length, type_list_made[1].length, type_list_made[2].length, type_list_made[3].length, 
+                                          type_list_made[4].length, type_list_made[5].length, type_list_made[6].length, type_list_made[7].length, type_list_made[8].length
+                                          , type_list_made[9].length, type_list_made[10].length, type_list_made[11].length];
+            option_type.series[1].data = [type_list_missed[0].length, type_list_missed[1].length, type_list_missed[2].length, type_list_missed[3].length,
+                                          type_list_missed[4].length, type_list_missed[5].length, type_list_missed[6].length, type_list_missed[7].length, type_list_missed[8].length
+                                          , type_list_missed[9].length, type_list_missed[10].length, type_list_missed[11].length];
         }
         option_shotpoints.series[0].data = result_list_made;
         option_shotpoints.series[1].data = result_list_missed;
