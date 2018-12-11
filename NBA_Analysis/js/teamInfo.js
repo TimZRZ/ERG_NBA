@@ -44,7 +44,7 @@ query_name.find().then(function(todo){
       + "<th>Height</th>"
       + "<th>Weight</th>"
       + "</tr>";
-  var palyer_team = new AV.Query("Player_Team");
+  var palyer_team = new AV.Query("Player_Team2");
   palyer_team.equalTo('Team', team_abbr);
   palyer_team.descending('No_');
   palyer_team.find().then(function(todo){

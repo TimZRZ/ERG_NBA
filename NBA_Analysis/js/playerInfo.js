@@ -2,7 +2,7 @@ var url = decodeURI(window.location.href);
 var argsIndex = url .split("?name=");
 var arg = argsIndex[1];
 var name = arg.split("%20")[0];
-var query_name = new AV.Query('Player');
+var query_name = new AV.Query('Player2');
 
 //同步球员各项信息
 query_name.equalTo('Name',name);
