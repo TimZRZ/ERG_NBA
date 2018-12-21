@@ -4,6 +4,7 @@ var arg = argsIndex[1];
 var name = arg.split("%20")[0];
 var query_name = new AV.Query('Player2');
 
+
 //同步球员各项信息
 query_name.equalTo('Name',name);
 query_name.find().then(function(todo){
@@ -101,6 +102,7 @@ AV.Cloud.run('player_xy', paramsJson).then(function(data) {
     
     var shotpointsChat = echarts.init(document.getElementById('main'));
     var option_shotpoints = {
+        backgroundColor:'',
         xAxis: {
             scale: true,
             max: 300,
