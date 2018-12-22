@@ -3,17 +3,7 @@ var player_list = [];
 var team_list = [];
 
 //球队名字
-var query_team = new AV.Query('Team');
-query_team.ascending('Franchise');
-query_team.find().then(function(results) {
-    for (i in results) {
-        test_list.push(results[i].get('Franchise') + ', ' + results[i].get('Abbreviation'));
-        team_list.push(results[i].get('Franchise') + ', ' + results[i].get('Abbreviation'));
-    }
-}).catch(function(err){
-    console.log(err.message);
-});
-
+var test_list = ['BOS','CLE','MIL','PHI','TOR','GSW','IND','HOU','NOP','SAS','MIN','UTA']
 var old_value = "";
 var old_value2 = "";
 var highlightindex = -1;   //高亮
@@ -115,20 +105,19 @@ function addLoadEvent(func) {
   
 function judge(){
     var inputVal = document.getElementById("search_text1").value;
+    var inputVal2 = document.getElementById("search_text2").value;
     var find = false;
 
-    for (i in team_list) {
-        if (team_list[i] == inputVal) {
-            find = true;
-        }
-    }
+    if (inputVal != inputVal2)
+        find = true;
 
     if (find == true) {
-        document.getElementById('result').innerHTML = 'Winner: ' + inputVal.split(",")[1];
+        document.getElementById('result').src="images/PLOT/" + inputVal +'_'+inputVal2 + ".png";
+        console.log(document.getElementById('result').src);
     }
 
     if (find == false) {
-        alert('No such player or team!')
+        alert('Invalid!')
     }
 }
 
