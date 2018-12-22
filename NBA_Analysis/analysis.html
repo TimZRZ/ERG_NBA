@@ -11,6 +11,7 @@
     <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
     <script src="js/jquery.SuperSlide.2.1.1.js"></script>
     <script src="js/search.js"></script>
+    <script src="js/analysis.js"></script>
     <!-- Bootstrap-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
@@ -25,6 +26,7 @@
 <body>
 
     <!-- START NAV -->
+    
     <nav class="navbar is-white">
         <div class="container">
             <div class="navbar-brand">
@@ -52,19 +54,54 @@
         </div>
     </nav>
     <!-- END NAV -->
-    <div>
-        <h1 >Clusterring</h1>
+    <style type="text/css">
+        * {margin: 0; padding: 0;}
+        #analysis_container {height: 100px; width:100%; font-size: 0; margin-top: 5%; margin-left: 20%; padding: 0%}
+    </style>
+
+    <div id="analysis_container">
+        <div class="barAnalysis navbar-item" style="float:left;">
+            <form>
+                <input type="text" id="search_text1" autocomplete="off" placeholder="请输入主队" />
+            <div id="auto_div1"> </div>
+            </form>
+        </div>
+
+        <div style="float:left;">
+            <h1>   VS   </h1>
+        </div>
+
+        <div class="barAnalysis navbar-item"style="float:left;"> 
+            <form>
+                <input type="text" id="search_text2" autocomplete="off" placeholder="请输入客队" />
+            <div id="auto_div2"> </div>
+            </form>
+        </div>
+
+        <div class="barAnalysis navbar-item"style="float:left;"> 
+            <button id="search" type="analysis" onclick="judge()"> </button>
+        </div>
+
+        <div style="float:left; padding-left: 100px">
+            <label id="result" style="font-size: 32px; "></label>
+        </div>
+
+    </div>
+
+    <div style="margin-left: 10%; margin-top: 5%;">
+        <div style="float:left;">
+        <h1 >Clustering</h1>
         <div class="banner-box">
             <div class="bd">
                 <ul>          	    
                     <li>
-                        <div class="m-width">
-                        <a href="javascript:void(0);"><img src="images/analysis/kmeans_lda.jpg" /></a>
+                        <div class="m-width" >
+                        <a href="javascript:void(0);"><img style="height:300px" src="images/analysis/kmeans_lda.jpg" /></a>
                         </div>
                     </li>
                     <li>
-                        <div class="m-width">
-                        <a href="javascript:void(0);"><img src="images/analysis/kmeans_pca.jpg" /></a>
+                        <div class="m-width" style="height:400px ">
+                        <a href="javascript:void(0);"><img style="height:300px" src="images/analysis/kmeans_pca.jpg" /></a>
                         </div>
                     </li>
                     
@@ -73,31 +110,34 @@
             <div class="banner-btn">
                 <a class="prev" href="javascript:void(0);"></a>
                 <a class="next" href="javascript:void(0);"></a>
-                <div class="hd"><ul></ul></div>
+                <div class="hd" style="margin-left: 20px;"><ul></ul></div>
             </div>
         </div>
+        </div>
+
+        <div style="float:left;">
         <h1 >Regression</h1>
         <div class="banner-box">
             <div class="bd">
                 <ul>          	    
                     <li>
                         <div class="m-width">
-                        <a href="javascript:void(0);"><img src="images/analysis/gsw_cle.png" /></a>
+                        <a href="javascript:void(0);"><img style="height:300px" src="images/analysis/gsw_cle.png" /></a>
                         </div>
                     </li>
                     <li>
                         <div class="m-width">
-                        <a href="javascript:void(0);"><img src="images/analysis/gsw_hou.png" /></a>
+                        <a href="javascript:void(0);"><img style="height:300px" src="images/analysis/gsw_hou.png" /></a>
                         </div>
                     </li>
                     <li>
                         <div class="m-width">
-                        <a href="javascript:void(0);"><img src="images/analysis/941544331632_.pic.jpg" /></a>
+                        <a href="javascript:void(0);"><img style="height:300px" src="images/analysis/941544331632_.pic.jpg" /></a>
                         </div>
                     </li>
                     <li>
                         <div class="m-width">
-                        <a href="javascript:void(0);"><img src="images/analysis/cle_bos.png" /></a>
+                        <a href="javascript:void(0);"><img style="height:300px" src="images/analysis/cle_bos.png" /></a>
                         </div>
                     </li>  
                 </ul>
@@ -105,8 +145,9 @@
             <div class="banner-btn">
                 <a class="prev" href="javascript:void(0);"></a>
                 <a class="next" href="javascript:void(0);"></a>
-                <div class="hd"><ul></ul></div>
+                <div class="hd" style="margin-left: 20px;"><ul></ul></div>
             </div>
+        </div>
         </div>
             
         <script type="text/javascript">

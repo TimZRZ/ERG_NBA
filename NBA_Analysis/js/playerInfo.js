@@ -245,9 +245,13 @@ AV.Cloud.run('player_xy', paramsJson).then(function(data) {
                 },
         ]
     };
+
+    // Get click interation from user
     typeChart.on('click', function(param) {
+        // Get specific operaing data set
         console.log(param.dataIndex);
         chosen_type[param.dataIndex] = !chosen_type[param.dataIndex];
+
         if (chosen_type[param.dataIndex]){
             color_type_made[param.dataIndex] = "#FE8463";
             color_type_missed[param.dataIndex] = "#FE8463";
@@ -256,9 +260,11 @@ AV.Cloud.run('player_xy', paramsJson).then(function(data) {
             color_type_missed[param.dataIndex] = "red";
 
         }
+        // Check whether all pillars are selected
         var allFalse = true;
         var result_list_made = [];
         var result_list_missed = [];
+        // Put selected data pillars together
         for (i in chosen_type) {
             if (chosen_type[i] == true) {
                     for (j in type_list_made[i]) {
@@ -276,6 +282,7 @@ AV.Cloud.run('player_xy', paramsJson).then(function(data) {
             result_list_made = shotlist_made;
             result_list_missed = shotlist_missed;
         }
+        //change data in other charts
         option_shotpoints.series[0].data = result_list_made;
         option_shotpoints.series[1].data = result_list_missed;
         typeChart.setOption(option_type);

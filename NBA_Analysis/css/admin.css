@@ -119,6 +119,33 @@ button{
 	color:#F9F0DA;
 }
 
+.barAnalysis input {
+  font-size: 24px;
+  background:transparent;
+  font-family: Arial, Helvetica, sans-serif;
+	top:0;
+  right:0;
+  border-color: #c5464a; 
+  border-style: solid; 
+  border-top-width: 0px;
+  border-right-width: 0px; 
+  border-bottom-width: 2px;
+  border-left-width: 0px;
+}
+
+.barAnalysis button {
+	background:#c5464a;
+  border-radius:5px 5px 5px 5px;
+  top: 5px;
+	width:80px;
+}
+.barAnalysis button:before {
+	content:"预测";
+  font-size:24px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+	color:#F9F0DA;
+}
+
 .team_logo{
   width:25px;
   height:25px;
@@ -251,6 +278,32 @@ button{
 }
 
 #auto_div
+{
+    display: none;
+    width: 300px;
+    background: #FFF;
+    position: absolute;
+    top: 44px;
+    left: 0;
+    height: 200px;
+    color: #323232;
+    overflow: hidden;
+}
+
+#auto_div1
+{
+    display: none;
+    width: 300px;
+    background: #FFF;
+    position: absolute;
+    top: 44px;
+    left: 0;
+    height: 200px;
+    color: #323232;
+    overflow: hidden;
+}
+
+#auto_div2
 {
     display: none;
     width: 300px;
